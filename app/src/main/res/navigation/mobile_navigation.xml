@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.my_spender.ui.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_consejos"
+        android:name="com.example.my_spender.ui.consejos.ConsejosFragment"
+        android:label="@string/menu_consejos"
+        tools:layout="@layout/fragment_consejos" />
+
+    <fragment
+        android:id="@+id/nav_conectividad"
+        android:name="com.example.my_spender.ui.conectividad.ConectividadFragment"
+        android:label="@string/menu_conectividad"
+        tools:layout="@layout/fragment_conectividad" />
+
+    <fragment
+        android:id="@+id/nav_configuracion_perfil"
+        android:name="com.example.my_spender.ui.configuraciones.ConfiguracionesFragment"
+        android:label="@string/menu_configuraciones"
+        tools:layout="@layout/fragment_configuraciones" />
+    <fragment
+        android:id="@+id/nav_modo_uso"
+        android:name="com.example.my_spender.ui.modo.ModoFragment"
+        android:label="@string/menu_modo_uso"
+        tools:layout="@layout/fragment_modo" />
+
+</navigation>
