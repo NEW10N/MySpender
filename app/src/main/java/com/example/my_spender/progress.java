@@ -54,6 +54,7 @@ public class progress extends AppCompatActivity {
                     public void run() {
                         Intent intent = new Intent(progress.this, home.class);
                         startActivity(intent);
+                        finish();
                     }
                 });
             }
@@ -61,6 +62,7 @@ public class progress extends AppCompatActivity {
         btn.setVisibility(View.GONE);
         miProgress.setVisibility(View.VISIBLE);
         miProgress.setMax(100);
+
     }
 
     //el metodo se encarga de alargar el tiempo de esperar en la animación de carga
