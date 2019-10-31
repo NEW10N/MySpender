@@ -36,7 +36,7 @@
         android:layout_marginBottom="15dp"
         android:background="@drawable/buttonrec"
         android:fontFamily="sans-serif-condensed-light"
-        android:textSize="25dp"
+        android:textSize="20dp"
         android:text="Comenzar"
         android:textColor="@color/colorWhite"
         app:layout_constraintBottom_toBottomOf="parent"
