@@ -26,7 +26,7 @@
                 android:id="@+id/my_toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
-                android:text="Cachorro"
+                android:text="Adulto"
                 android:textAlignment="center"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="35dp"
