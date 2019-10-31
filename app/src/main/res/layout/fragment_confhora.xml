@@ -9,7 +9,7 @@
         android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:text="Para comenzar"
+        android:text="Hora de comida"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="35dp"
@@ -20,66 +20,26 @@
 
     <ImageView
         android:id="@+id/imagenPerro"
-        android:layout_width="252dp"
-        android:layout_height="140dp"
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"
         android:layout_marginTop="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/my_toolbar"
-        app:srcCompat="@drawable/dogicon" />
+        app:srcCompat="@drawable/feeding" />
 
     <TextView
         android:id="@+id/textQuestion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="¿Cómo es tu mascota?"
-        android:textColor="@color/colorAccent"
+        android:text="Ingresa la hora de comida"
+        android:textColor="@color/colorGray"
         android:textSize="30dp"
         app:fontFamily="sans-serif-light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imagenPerro" />
-
-    <TextView
-        android:id="@+id/textAge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="30dp"
-        android:text="Edad"
-        android:textColor="@color/colorBlack"
-        android:textSize="25dp"
-        app:fontFamily="sans-serif-light"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textQuestion" />
-
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="276dp"
-        android:layout_height="113dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textAge">
-
-        <RadioButton
-            android:id="@+id/rdbttcachorro"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Cachorro"
-            android:textSize="24dp"
-            app:fontFamily="sans-serif-light" />
-
-        <RadioButton
-            android:id="@+id/rdbttadulto"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:text="Adulto"
-            android:textSize="24dp"
-            app:fontFamily="sans-serif-light" />
-    </RadioGroup>
 
     <Button
         android:id="@+id/buttonComenzar"
@@ -92,6 +52,6 @@
         android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

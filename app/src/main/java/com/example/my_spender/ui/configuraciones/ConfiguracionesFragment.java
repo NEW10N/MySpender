@@ -23,13 +23,13 @@ public class ConfiguracionesFragment extends Fragment {
         configuracionesViewModel =
                 ViewModelProviders.of(this).get(ConfiguracionesViewModel.class);
         View root = inflater.inflate(R.layout.fragment_configuraciones, container, false);
-        final TextView textView = root.findViewById(R.id.text_configuraciones);
+        /**final TextView textView = root.findViewById(R.id.text_configuraciones);
         configuracionesViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
             }
-        });
+        });**/
         return root;
     }
 }
