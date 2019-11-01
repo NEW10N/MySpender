@@ -12,5 +12,7 @@
     <string name="menu_modo_uso">Modo de Uso</string>
     <string name="menu_conectividad">Conectividad</string>
     <string name="menu_configuraciones">Configuraciones</string>
+    <string name="Size">Tamaño</string>
+    <string name="Weight">Peso</string>
 
 </resources>

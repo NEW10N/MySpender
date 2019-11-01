@@ -1,2 +1,2 @@
-include ':app'
+include ':app', ':jfuzzylite-6.0'
 rootProject.name='My_Spender'
