@@ -53,7 +53,7 @@
                 app:fontFamily="sans-serif-light" />
 
             <TextView
-                android:id="@+id/textAge"
+                android:id="@+id/textSize"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -86,7 +86,7 @@
                 app:fontFamily="sans-serif-light" />
 
             <TextView
-                android:id="@+id/textActivity"
+                android:id="@+id/textWeight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -97,7 +97,7 @@
                 app:fontFamily="sans-serif-light" />
 
             <SeekBar
-                android:id="@+id/seekBarActivity"
+                android:id="@+id/seekBarWeight"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -106,7 +106,7 @@
                 android:max="100" />
 
             <TextView
-                android:id="@+id/textActivity2"
+                android:id="@+id/textActivity"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -117,7 +117,7 @@
                 app:fontFamily="sans-serif-light" />
 
             <SeekBar
-                android:id="@+id/seekBarActivity2"
+                android:id="@+id/seekBarActivity"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -135,7 +135,8 @@
                 android:textColor="@color/colorWhite"
                 android:textSize="20dp"
                 android:layout_marginTop="20dp"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:onClick="ActivateFuzzySystem"/>
         </LinearLayout>
     </ScrollView>
 
