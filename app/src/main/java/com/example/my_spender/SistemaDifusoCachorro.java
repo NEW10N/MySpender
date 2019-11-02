@@ -41,6 +41,9 @@ public class SistemaDifusoCachorro extends AppCompatActivity {
     //Datos para el seek de la edad
     private SeekBar skbAge;
 
+    //Asignacion a la seekBar Edad
+
+
     //cantidad del seek de la edad
     private int AgeValue;
 
@@ -71,6 +74,8 @@ public class SistemaDifusoCachorro extends AppCompatActivity {
         //Valor por default del peso
         AgeValue = 0;
 
+        //El seek de la edad
+        skbAge = findViewById(R.id.seekBarAge);
         //Metodos del seek del tamaño
         skbSize.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override

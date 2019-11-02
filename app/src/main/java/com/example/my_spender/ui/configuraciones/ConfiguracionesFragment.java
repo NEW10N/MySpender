@@ -12,7 +12,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.Navigation;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.my_spender.R;
@@ -25,6 +27,7 @@ public class ConfiguracionesFragment extends Fragment {
     Button btnComenzar;
     RadioGroup radioGroup;
     RadioButton radioButton;
+    SistemaDifusoCachorro sistemaDifusoCachorro;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -53,11 +56,13 @@ public class ConfiguracionesFragment extends Fragment {
                 else{
                     if (radioButton.getText().toString().trim().equalsIgnoreCase("Cachorro")) {
                         Toast.makeText(getContext(), "Has elegido cachorro.", Toast.LENGTH_SHORT).show();
-                        //  FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-                        //transaction.replace(getContext(),);
+                        Navigation.findNavController(getView()).navigate(R.id.action_nav_configuracion_perfil_to_sistemaDifusoCachorro);
+
+
                     }
                     if (radioButton.getText().toString().trim().equalsIgnoreCase("Adulto")) {
                         Toast.makeText(getContext(), "Has elegido adulto.", Toast.LENGTH_SHORT).show();
+                        Navigation.findNavController(getView()).navigate(R.id.action_nav_configuracion_perfil_to_sistemaDifusoAdulto);
                     }
                 }
             }

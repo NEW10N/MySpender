@@ -71,6 +71,9 @@ public class SistemaDifusoAdulto extends AppCompatActivity {
         //Valor por default del peso
         ActivityValue = 0;
 
+        //El seek de la actividad
+        skbActivity = findViewById(R.id.seekBarActivity);
+
         //Metodos del seek del tamaño
         skbSize.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override

@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@id/nav_home">
+
 
     <fragment
         android:id="@+id/nav_home"
@@ -27,11 +28,29 @@
         android:id="@+id/nav_configuracion_perfil"
         android:name="com.example.my_spender.ui.configuraciones.ConfiguracionesFragment"
         android:label="@string/menu_configuraciones"
-        tools:layout="@layout/fragment_configuraciones" />
+        tools:layout="@layout/fragment_configuraciones" >
+        <action
+            android:id="@+id/action_nav_configuracion_perfil_to_sistemaDifusoCachorro"
+            app:destination="@id/sistemaDifusoCachorro" />
+        <action
+            android:id="@+id/action_nav_configuracion_perfil_to_sistemaDifusoAdulto"
+            app:destination="@id/sistemaDifusoAdulto" />
+    </fragment>
+
     <fragment
         android:id="@+id/nav_modo_uso"
         android:name="com.example.my_spender.ui.modo.ModoFragment"
         android:label="@string/menu_modo_uso"
         tools:layout="@layout/fragment_modo" />
+    <activity
+        android:id="@+id/sistemaDifusoCachorro"
+        android:name="com.example.my_spender.SistemaDifusoCachorro"
+        android:label="fragment_confcachorro"
+        tools:layout="@layout/fragment_confcachorro" />
+    <activity
+        android:id="@+id/sistemaDifusoAdulto"
+        android:name="com.example.my_spender.SistemaDifusoAdulto"
+        android:label="fragment_confadulto"
+        tools:layout="@layout/fragment_confadulto" />
 
 </navigation>
