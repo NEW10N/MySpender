@@ -12,5 +12,10 @@
     <string name="menu_modo_uso">Modo de Uso</string>
     <string name="menu_conectividad">Conectividad</string>
     <string name="menu_configuraciones">Configuraciones</string>
+    <string name="Size">Tamaño</string>
+    <string name="Weight">Peso</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

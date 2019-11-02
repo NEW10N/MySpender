@@ -53,7 +53,7 @@
                 app:fontFamily="sans-serif-light" />
 
             <TextView
-                android:id="@+id/textAge"
+                android:id="@+id/textSize"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -66,27 +66,73 @@
             <SeekBar
                 android:id="@+id/seekBarSize"
                 style="@style/Widget.AppCompat.SeekBar"
-                android:layout_width="300dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="24dp"
                 android:max="50" />
 
-            <TextView
-                android:id="@+id/textSizeValue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Miniatura"
-                android:layout_gravity="center"
-                android:textAlignment="center"
-                android:textColor="#000"
-                android:textSize="18sp"
-                app:fontFamily="sans-serif-light" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="66dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textSizeValue2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="1"
+                    android:text="Miniatura"
+                    android:textAlignment="center"
+                    android:textColor="#000"
+                    android:textSize="18sp"
+                    app:fontFamily="sans-serif-light" />
+
+                <TextView
+                    android:id="@+id/textSizeValue3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="1"
+                    android:text="Pequeño"
+                    android:textAlignment="center"
+                    android:textColor="#000"
+                    android:textSize="18sp"
+                    app:fontFamily="sans-serif-light" />
+
+                <TextView
+                    android:id="@+id/textSizeValue4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="1"
+                    android:text="Mediano"
+                    android:textAlignment="center"
+                    android:textColor="#000"
+                    android:textSize="18sp"
+                    app:fontFamily="sans-serif-light" />
+
+                <TextView
+                    android:id="@+id/textSizeValue5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="1"
+                    android:text="Grande"
+                    android:textAlignment="center"
+                    android:textColor="#000"
+                    android:textSize="18sp"
+                    app:fontFamily="sans-serif-light" />
+            </LinearLayout>
 
             <TextView
-                android:id="@+id/textActivity"
+                android:id="@+id/textWeight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -97,16 +143,74 @@
                 app:fontFamily="sans-serif-light" />
 
             <SeekBar
-                android:id="@+id/seekBarActivity"
-                android:layout_width="300dp"
+                android:id="@+id/seekBarWeight"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="24dp"
                 android:max="100" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="51dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textSizeValue2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="1"
+                    android:text="Miniatura"
+                    android:textAlignment="center"
+                    android:textColor="#000"
+                    android:textSize="18sp"
+                    app:fontFamily="sans-serif-light" />
+
+                <TextView
+                    android:id="@+id/textSizeValue3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="1"
+                    android:text="Pequeño"
+                    android:textAlignment="center"
+                    android:textColor="#000"
+                    android:textSize="18sp"
+                    app:fontFamily="sans-serif-light" />
+
+                <TextView
+                    android:id="@+id/textSizeValue4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="1"
+                    android:text="Mediano"
+                    android:textAlignment="center"
+                    android:textColor="#000"
+                    android:textSize="18sp"
+                    app:fontFamily="sans-serif-light" />
+
+                <TextView
+                    android:id="@+id/textSizeValue5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="1"
+                    android:text="Grande"
+                    android:textAlignment="center"
+                    android:textColor="#000"
+                    android:textSize="18sp"
+                    app:fontFamily="sans-serif-light" />
+            </LinearLayout>
+
             <TextView
-                android:id="@+id/textActivity2"
+                android:id="@+id/textAge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -117,13 +221,115 @@
                 app:fontFamily="sans-serif-light" />
 
             <SeekBar
-                android:id="@+id/seekBarActivity2"
+                android:id="@+id/seekBarAge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="24dp"
                 android:max="100" />
+
+            <TextView
+                android:id="@+id/textAge2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="24dp"
+                android:text="Composición"
+                android:textColor="#000"
+                android:textSize="24sp"
+                app:fontFamily="sans-serif-light" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textAge3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_weight="1"
+                    android:text="0"
+                    android:textColor="#000"
+                    android:textSize="24sp"
+                    app:fontFamily="sans-serif-light" />
+
+                <TextView
+                    android:id="@+id/textAge4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_weight="1"
+                    android:text="2"
+                    android:textColor="#000"
+                    android:textSize="24sp"
+                    app:fontFamily="sans-serif-light" />
+
+                <TextView
+                    android:id="@+id/textAge5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_weight="1"
+                    android:text="4"
+                    android:textColor="#000"
+                    android:textSize="24sp"
+                    app:fontFamily="sans-serif-light" />
+
+                <TextView
+                    android:id="@+id/textAge6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_weight="1"
+                    android:text="6"
+                    android:textColor="#000"
+                    android:textSize="24sp"
+                    app:fontFamily="sans-serif-light" />
+
+                <TextView
+                    android:id="@+id/textAge7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_weight="1"
+                    android:text="8"
+                    android:textColor="#000"
+                    android:textSize="24sp"
+                    app:fontFamily="sans-serif-light" />
+
+                <TextView
+                    android:id="@+id/textAge8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_weight="1"
+                    android:text="_10_"
+                    android:textColor="#000"
+                    android:textSize="24sp"
+                    app:fontFamily="sans-serif-light" />
+
+                <TextView
+                    android:id="@+id/textAge9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_weight="1"
+                    android:text="_12_"
+                    android:textColor="#000"
+                    android:textSize="24sp"
+                    app:fontFamily="sans-serif-light" />
+
+            </LinearLayout>
 
             <Button
                 android:id="@+id/buttonComenzar"
@@ -135,7 +341,9 @@
                 android:textColor="@color/colorWhite"
                 android:textSize="20dp"
                 android:layout_marginTop="20dp"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:onClick="ActivateFuzzySystem"/>
+
         </LinearLayout>
     </ScrollView>
 

@@ -12,21 +12,32 @@
         <activity
             android:name=".home"
             android:label="@string/title_activity_home"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".splash"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".carrousel"
+        <activity
+            android:name=".carrousel"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".progress" />
+
+        <activity
+            android:name=".SistemaDifusoCachorro"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".SistemaDifusoAdulto"
+            android:screenOrientation="portrait"
+            />
     </application>
+
 
 </manifest>
