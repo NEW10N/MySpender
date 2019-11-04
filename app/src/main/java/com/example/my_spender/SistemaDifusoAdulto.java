@@ -1,6 +1,7 @@
 package com.example.my_spender;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -50,29 +51,30 @@ public class SistemaDifusoAdulto extends AppCompatActivity {
         setContentView(R.layout.fragment_confadulto);
 
         //El texto, seek y valor del seek del tamaño
-        textSize = findViewById(R.id.textSize);
-        skbSize = findViewById(R.id.seekBarSize);
-        textSizeValue = findViewById(R.id.textSizeValue);
+        textSize = findViewById(R.id.textSizeAdulto);
+        skbSize = findViewById(R.id.seekBarSizeAdulto);
+        textSizeValue = findViewById(R.id.textSizeValueAdulto);
 
         //El seek del peso
-        skbWeight = findViewById(R.id.seekBarWeight);
+        skbWeight = findViewById(R.id.seekBarWeightAdulto);
 
         //Texto y valor por default del tamaño
         textSizeAnswer = getResources().getString(R.string.Size);
         textSize.setText(textSizeAnswer + ": " + "Miniatura");
         SizeValue = 0;
+        textSizeValue.setText("0cm");
 
         //Valor por default del peso
         weightValue = 0;
 
         //El seek de la edad
-        skbWeight = findViewById(R.id.seekBarActivity);
+        skbWeight = findViewById(R.id.seekBarActivityAdulto);
 
         //Valor por default del peso
         ActivityValue = 0;
 
         //El seek de la actividad
-        skbActivity = findViewById(R.id.seekBarActivity);
+        skbActivity = findViewById(R.id.seekBarActivityAdulto);
 
         //Metodos del seek del tamaño
         skbSize.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -134,7 +136,7 @@ public class SistemaDifusoAdulto extends AppCompatActivity {
 
     }
 
-    public void ActivateFuzzySystem() {
+    public void ActivateFuzzySystem(View v) {
         if(SizeValue == 0){
             Toast.makeText(this, "Falta información del tamaño", Toast.LENGTH_SHORT).show();
         }else if(weightValue == 0) {
