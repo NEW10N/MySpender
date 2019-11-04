@@ -27,7 +27,9 @@
             android:name=".carrousel"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".progress" />
+        <activity
+            android:name=".progress"
+            android:theme="@style/AppTheme.NoActionBar"/>
 
         <activity
             android:name=".SistemaDifusoCachorro"
