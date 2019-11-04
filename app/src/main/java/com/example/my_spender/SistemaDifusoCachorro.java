@@ -55,7 +55,7 @@ public class SistemaDifusoCachorro extends AppCompatActivity {
         //El texto, seek y valor del seek del tamaño
         textSize = findViewById(R.id.textSize);
         skbSize = findViewById(R.id.seekBarSize);
-        textSizeValue = findViewById(R.id.textSizeValue);
+        textSizeValue = findViewById(R.id.textSize);
 
         //El seek del peso
         skbWeight = findViewById(R.id.seekBarWeight);

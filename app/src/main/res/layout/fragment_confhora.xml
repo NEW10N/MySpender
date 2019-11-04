@@ -28,23 +28,11 @@
         app:layout_constraintTop_toBottomOf="@+id/my_toolbar"
         app:srcCompat="@drawable/feeding" />
 
-    <TextView
-        android:id="@+id/textQuestion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Ingresa la hora de comida"
-        android:textColor="@color/colorGray"
-        android:textSize="30dp"
-        app:fontFamily="sans-serif-light"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imagenPerro" />
-
     <Button
         android:id="@+id/buttonComenzar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:background="@drawable/buttonrec"
         android:fontFamily="sans-serif-condensed-light"
         android:text="Siguiente"
@@ -52,6 +40,99 @@
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
 
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="406dp"
+        android:layout_height="242dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonComenzar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagenPerro"
+        app:layout_constraintVertical_bias="0.116">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textQuestion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:paddingLeft="20dp"
+                android:text="Ingresa la cantidad de veces que se va alimentar"
+                android:textAlignment="viewStart"
+                android:textColor="@color/colorGray"
+                android:textSize="20dp"
+                app:fontFamily="sans-serif-light"
+                tools:ignore="RtlCompat" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/minus"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="150dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/minus"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="@color/colorGray"
+                    android:textSize="20dp"
+                    app:fontFamily="sans-serif-light" />
+
+                <Button
+                    android:id="@+id/plus"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/mas"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textQuestion2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:paddingLeft="20dp"
+                android:text="Ingresa la hora de comida"
+                android:textAlignment="viewStart"
+                android:textColor="@color/colorGray"
+                android:textSize="20dp"
+                app:fontFamily="sans-serif-light"
+                tools:ignore="RtlCompat" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/buttonrec"
+                    android:text="Seleccione la hora"
+                    app:fontFamily="sans-serif-condensed-light"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

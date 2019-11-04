@@ -50,9 +50,9 @@ public class SistemaDifusoAdulto extends AppCompatActivity {
         setContentView(R.layout.fragment_confadulto);
 
         //El texto, seek y valor del seek del tamaño
-        textSize = findViewById(R.id.textSize);
-        skbSize = findViewById(R.id.seekBarSize);
-        textSizeValue = findViewById(R.id.textSizeValue);
+        textSize = findViewById(R.id.texttamañodogo);
+        skbSize = findViewById(R.id.seekBartadogo);
+        textSizeValue = findViewById(R.id.texttamañodogo);
 
         //El seek del peso
         skbWeight = findViewById(R.id.seekBarWeight);
@@ -66,13 +66,13 @@ public class SistemaDifusoAdulto extends AppCompatActivity {
         weightValue = 0;
 
         //El seek de la edad
-        skbWeight = findViewById(R.id.seekBarActivity);
+        skbWeight = findViewById(R.id.seekBarpesodogo);
 
         //Valor por default del peso
         ActivityValue = 0;
 
         //El seek de la actividad
-        skbActivity = findViewById(R.id.seekBarActivity);
+        skbActivity = findViewById(R.id.seekBarActividad);
 
         //Metodos del seek del tamaño
         skbSize.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
