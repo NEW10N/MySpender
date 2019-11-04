@@ -23,7 +23,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/my_toolbar"
+                android:id="@+id/mytoolbarCachorro"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:text="Cachorro"
@@ -33,7 +33,7 @@
                 app:fontFamily="sans-serif-condensed-light" />
 
             <ImageView
-                android:id="@+id/imagenPerro"
+                android:id="@+id/imagenPerroCachorro"
                 android:layout_width="270dp"
                 android:layout_height="150dp"
                 android:layout_marginTop="15dp"
@@ -41,7 +41,7 @@
                 android:layout_gravity="center"/>
 
             <TextView
-                android:id="@+id/textQuestion"
+                android:id="@+id/textQuestionCachorro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -53,7 +53,7 @@
                 app:fontFamily="sans-serif-light" />
 
             <TextView
-                android:id="@+id/textSize"
+                android:id="@+id/textSizeCachorro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -64,7 +64,7 @@
                 app:fontFamily="sans-serif-light" />
 
             <SeekBar
-                android:id="@+id/seekBarSize"
+                android:id="@+id/seekBarSizeCachorro"
                 style="@style/Widget.AppCompat.SeekBar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -79,7 +79,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textSizeValue2"
+                    android:id="@+id/optionSizeCachorro1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -92,7 +92,7 @@
                     app:fontFamily="sans-serif-light" />
 
                 <TextView
-                    android:id="@+id/textSizeValue3"
+                    android:id="@+id/optionSizeCachorro2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -105,7 +105,7 @@
                     app:fontFamily="sans-serif-light" />
 
                 <TextView
-                    android:id="@+id/textSizeValue4"
+                    android:id="@+id/optionSizeCachorro3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -118,7 +118,7 @@
                     app:fontFamily="sans-serif-light" />
 
                 <TextView
-                    android:id="@+id/textSizeValue5"
+                    android:id="@+id/optionSizeCachorro4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -132,18 +132,18 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/textWeight"
+                android:id="@+id/textWeightCachorro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="24dp"
-                android:text="Peso"
+                android:text="@string/Weight"
                 android:textColor="#000"
                 android:textSize="24sp"
                 app:fontFamily="sans-serif-light" />
 
             <SeekBar
-                android:id="@+id/seekBarWeight"
+                android:id="@+id/seekBarWeightCachorro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -157,7 +157,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textSizeValue2"
+                    android:id="@+id/optionWeightCachorro1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -170,7 +170,7 @@
                     app:fontFamily="sans-serif-light" />
 
                 <TextView
-                    android:id="@+id/textSizeValue3"
+                    android:id="@+id/optionWeightCachorro2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -183,7 +183,7 @@
                     app:fontFamily="sans-serif-light" />
 
                 <TextView
-                    android:id="@+id/textSizeValue4"
+                    android:id="@+id/optionWeightCachorro3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -196,7 +196,7 @@
                     app:fontFamily="sans-serif-light" />
 
                 <TextView
-                    android:id="@+id/textSizeValue5"
+                    android:id="@+id/optionWeightCachorro4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -210,7 +210,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/textAge"
+                android:id="@+id/textAgeCachorro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -221,16 +221,16 @@
                 app:fontFamily="sans-serif-light" />
 
             <SeekBar
-                android:id="@+id/seekBarAge"
+                android:id="@+id/seekBarAgeCachorro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="24dp"
-                android:max="100" />
+                android:max="12" />
 
             <TextView
-                android:id="@+id/textAge2"
+                android:id="@+id/textComposition"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -255,6 +255,7 @@
                     android:text="0"
                     android:textColor="#000"
                     android:textSize="24sp"
+                    android:gravity="center"
                     app:fontFamily="sans-serif-light" />
 
                 <TextView
@@ -267,6 +268,7 @@
                     android:text="2"
                     android:textColor="#000"
                     android:textSize="24sp"
+                    android:gravity="center"
                     app:fontFamily="sans-serif-light" />
 
                 <TextView
@@ -279,6 +281,7 @@
                     android:text="4"
                     android:textColor="#000"
                     android:textSize="24sp"
+                    android:gravity="center"
                     app:fontFamily="sans-serif-light" />
 
                 <TextView
@@ -291,6 +294,7 @@
                     android:text="6"
                     android:textColor="#000"
                     android:textSize="24sp"
+                    android:gravity="center"
                     app:fontFamily="sans-serif-light" />
 
                 <TextView
@@ -303,6 +307,7 @@
                     android:text="8"
                     android:textColor="#000"
                     android:textSize="24sp"
+                    android:gravity="center"
                     app:fontFamily="sans-serif-light" />
 
                 <TextView
@@ -312,9 +317,10 @@
                     android:layout_marginStart="0dp"
                     android:layout_marginTop="0dp"
                     android:layout_weight="1"
-                    android:text="_10_"
+                    android:text="10"
                     android:textColor="#000"
                     android:textSize="24sp"
+                    android:gravity="center"
                     app:fontFamily="sans-serif-light" />
 
                 <TextView
@@ -324,9 +330,10 @@
                     android:layout_marginStart="0dp"
                     android:layout_marginTop="0dp"
                     android:layout_weight="1"
-                    android:text="_12_"
+                    android:text="12"
                     android:textColor="#000"
                     android:textSize="24sp"
+                    android:gravity="center"
                     app:fontFamily="sans-serif-light" />
 
             </LinearLayout>
