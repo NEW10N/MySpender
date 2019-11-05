@@ -36,7 +36,6 @@ public class SistemaDifusoCachorro extends AppCompatActivity {
     private TextView textWeight;
     private SeekBar skbWeight;
     private String weight;
-    private TextView optionWeightArray[] = new TextView[4];
     //cantidad del seek del peso
     private int weightValue;
 
@@ -64,21 +63,15 @@ public class SistemaDifusoCachorro extends AppCompatActivity {
         textSize.setText(size + ": 0cm");
         textSize.setTextColor(getColor(R.color.colorRed));
         SizeValue = 0;
-        optionSizeArray[0].setBackgroundColor(getColor(R.color.colorAccent));
 
         //El seek y las opciones del peso
         textWeight = findViewById(R.id.textWeightCachorro);
         skbWeight = findViewById(R.id.seekBarWeightCachorro);
-        optionWeightArray[0] = findViewById(R.id.optionWeightCachorro1);
-        optionWeightArray[1] = findViewById(R.id.optionWeightCachorro2);
-        optionWeightArray[2] = findViewById(R.id.optionWeightCachorro3);
-        optionWeightArray[3] = findViewById(R.id.optionWeightCachorro4);
         //Valor y color por default del peso
         weight = getResources().getString(R.string.Weight);
         textWeight.setText(weight + ": 0kg");
         textWeight.setTextColor(getColor(R.color.colorRed));
         weightValue = 0;
-        optionWeightArray[0].setBackgroundColor(getColor(R.color.colorAccent));
 
         //El seek, las opciones y el valor de la edad
         textAge = findViewById(R.id.textAgeCachorro);
@@ -97,23 +90,24 @@ public class SistemaDifusoCachorro extends AppCompatActivity {
                 textSize.setText(size + ": " + progress + "cm");
                 if(progress == 0) {
                     textSize.setTextColor(getColor(R.color.colorRed));
+                    optionSizeArray[0].setBackgroundColor(getColor(R.color.colorWhite));
                 }else{
                     textSize.setTextColor(getColor(R.color.colorBlack));
-                }
-                if(progress <= 8){
-                    optionSizeArray[0].setBackgroundColor(getColor(R.color.colorAccent));
-                    optionSizeArray[1].setBackgroundColor(getColor(R.color.colorWhite));
-                }else if(progress <= 20){
-                    optionSizeArray[0].setBackgroundColor(getColor(R.color.colorWhite));
-                    optionSizeArray[1].setBackgroundColor(getColor(R.color.colorAccent));
-                    optionSizeArray[2].setBackgroundColor(getColor(R.color.colorWhite));
-                }else if(progress <= 30){
-                    optionSizeArray[1].setBackgroundColor(getColor(R.color.colorWhite));
-                    optionSizeArray[2].setBackgroundColor(getColor(R.color.colorAccent));
-                    optionSizeArray[3].setBackgroundColor(getColor(R.color.colorWhite));
-                }else {
-                    optionSizeArray[2].setBackgroundColor(getColor(R.color.colorWhite));
-                    optionSizeArray[3].setBackgroundColor(getColor(R.color.colorAccent));
+                    if(progress <= 8){
+                        optionSizeArray[0].setBackgroundColor(getColor(R.color.colorAccent));
+                        optionSizeArray[1].setBackgroundColor(getColor(R.color.colorWhite));
+                    }else if(progress <= 20){
+                        optionSizeArray[0].setBackgroundColor(getColor(R.color.colorWhite));
+                        optionSizeArray[1].setBackgroundColor(getColor(R.color.colorAccent));
+                        optionSizeArray[2].setBackgroundColor(getColor(R.color.colorWhite));
+                    }else if(progress <= 30){
+                        optionSizeArray[1].setBackgroundColor(getColor(R.color.colorWhite));
+                        optionSizeArray[2].setBackgroundColor(getColor(R.color.colorAccent));
+                        optionSizeArray[3].setBackgroundColor(getColor(R.color.colorWhite));
+                    }else {
+                        optionSizeArray[2].setBackgroundColor(getColor(R.color.colorWhite));
+                        optionSizeArray[3].setBackgroundColor(getColor(R.color.colorAccent));
+                    }
                 }
                 SizeValue = progress;
             }
@@ -139,19 +133,9 @@ public class SistemaDifusoCachorro extends AppCompatActivity {
                     textWeight.setTextColor(getColor(R.color.colorBlack));
                 }
                 if(progress <= 15){
-                    optionWeightArray[0].setBackgroundColor(getColor(R.color.colorAccent));
-                    optionWeightArray[1].setBackgroundColor(getColor(R.color.colorWhite));
                 }else if(progress <= 25){
-                    optionWeightArray[0].setBackgroundColor(getColor(R.color.colorWhite));
-                    optionWeightArray[1].setBackgroundColor(getColor(R.color.colorAccent));
-                    optionWeightArray[2].setBackgroundColor(getColor(R.color.colorWhite));
                 }else if(progress <= 35){
-                    optionWeightArray[1].setBackgroundColor(getColor(R.color.colorWhite));
-                    optionWeightArray[2].setBackgroundColor(getColor(R.color.colorAccent));
-                    optionWeightArray[3].setBackgroundColor(getColor(R.color.colorWhite));
                 }else {
-                    optionWeightArray[2].setBackgroundColor(getColor(R.color.colorWhite));
-                    optionWeightArray[3].setBackgroundColor(getColor(R.color.colorAccent));
                 }
                 weightValue = progress;
             }

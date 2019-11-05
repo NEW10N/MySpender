@@ -74,16 +74,16 @@
                 android:max="50" />
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="340dp"
                 android:layout_height="66dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_gravity="center">
 
                 <TextView
                     android:id="@+id/optionSizeCachorro1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="16dp"
                     android:layout_weight="1"
                     android:text="Miniatura"
                     android:textAlignment="center"
@@ -97,7 +97,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="16dp"
                     android:layout_weight="1"
                     android:text="Pequeño"
                     android:textAlignment="center"
@@ -110,7 +109,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="16dp"
                     android:layout_weight="1"
                     android:text="Mediano"
                     android:textAlignment="center"
@@ -123,7 +121,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="16dp"
                     android:layout_weight="1"
                     android:text="Grande"
                     android:textAlignment="center"
@@ -137,7 +134,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
-                android:layout_marginTop="24dp"
                 android:text="@string/Weight"
                 android:textColor="#000"
                 android:textSize="24sp"
@@ -189,66 +185,6 @@
                     tools:ignore="RtlCompat" />
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="66dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/optionWeightCachorro1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="16dp"
-                    android:layout_weight="1"
-                    android:text="Miniatura"
-                    android:textAlignment="center"
-                    android:textColor="#000"
-                    android:textSize="18sp"
-                    app:fontFamily="sans-serif-light" />
-
-                <TextView
-                    android:id="@+id/optionWeightCachorro2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="16dp"
-                    android:layout_weight="1"
-                    android:text="Pequeño"
-                    android:textAlignment="center"
-                    android:textColor="#000"
-                    android:textSize="18sp"
-                    app:fontFamily="sans-serif-light" />
-
-                <TextView
-                    android:id="@+id/optionWeightCachorro3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="16dp"
-                    android:layout_weight="1"
-                    android:text="Mediano"
-                    android:textAlignment="center"
-                    android:textColor="#000"
-                    android:textSize="18sp"
-                    app:fontFamily="sans-serif-light" />
-
-                <TextView
-                    android:id="@+id/optionWeightCachorro4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="16dp"
-                    android:layout_weight="1"
-                    android:text="Grande"
-                    android:textAlignment="center"
-                    android:textColor="#000"
-                    android:textSize="18sp"
-                    app:fontFamily="sans-serif-light" />
-                app:fontFamily="sans-serif-light" />
-
-            </LinearLayout>
-
 
             <TextView
                 android:id="@+id/textAgeCachorro"
@@ -270,6 +206,43 @@
                 android:layout_marginEnd="24dp"
                 android:max="12" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="51dp"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp">
+
+                <TextView
+                    android:id="@+id/textMinAgeCachorro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="0.2"
+                    android:paddingLeft="25dp"
+                    android:text="0"
+                    android:textAlignment="textStart"
+                    android:textColor="#000"
+                    android:textSize="18sp"
+                    app:fontFamily="sans-serif-light"
+                    tools:ignore="RtlCompat" />
+
+                <TextView
+                    android:id="@+id/textMaxAgeCachorro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="0.2"
+                    android:paddingRight="25dp"
+                    android:text="12 meses"
+                    android:textAlignment="textEnd"
+                    android:textColor="#000"
+                    android:textSize="18sp"
+                    app:fontFamily="sans-serif-light"
+                    tools:ignore="RtlCompat" />
+            </LinearLayout>
+
             <TextView
                 android:id="@+id/textComposition"
                 android:layout_width="match_parent"
@@ -282,9 +255,10 @@
                 app:fontFamily="sans-serif-light" />
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="240dp"
                 android:layout_height="35dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_gravity="center">
 
                 <TextView
                     android:id="@+id/textAge3"
@@ -390,7 +364,8 @@
                 android:textSize="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_gravity="center"
-                android:onClick="ActivateFuzzySystem"/>
+                android:onClick="ActivateFuzzySystem"
+                android:layout_marginBottom="20dp"/>
 
         </LinearLayout>
     </ScrollView>
