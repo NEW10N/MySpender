@@ -25,19 +25,25 @@ import androidx.appcompat.app.AppCompatActivity;
 public class SistemaDifusoCachorro extends AppCompatActivity {
 
     //Datos para el seek del tamaño
+    private TextView textSize;
     private SeekBar skbSize;
+    private String size;
     private TextView optionSizeArray[] = new TextView[4];
     //cantidad del seek del tamaño
     private int SizeValue;
 
     //Datos para el seek del peso
+    private TextView textWeight;
     private SeekBar skbWeight;
+    private String weight;
     private TextView optionWeightArray[] = new TextView[4];
     //cantidad del seek del peso
     private int weightValue;
 
     //Datos para el seek de la edad
+    private TextView textAge;
     private SeekBar skbAge;
+    private String age;
     //cantidad del seek de la edad
     private int AgeValue;
 
@@ -47,28 +53,40 @@ public class SistemaDifusoCachorro extends AppCompatActivity {
         setContentView(R.layout.fragment_confcachorro);
 
         //El seek y las opciones del seek del tamaño
+        textSize = findViewById(R.id.textSizeCachorro);
         skbSize = findViewById(R.id.seekBarSizeCachorro);
         optionSizeArray[0] = findViewById(R.id.optionSizeCachorro1);
         optionSizeArray[1] = findViewById(R.id.optionSizeCachorro2);
         optionSizeArray[2] = findViewById(R.id.optionSizeCachorro3);
         optionSizeArray[3] = findViewById(R.id.optionSizeCachorro4);
         //Valor y color por default del tamaño
+        size = getResources().getString(R.string.Size);
+        textSize.setText(size + ": 0cm");
+        textSize.setTextColor(getColor(R.color.colorRed));
         SizeValue = 0;
         optionSizeArray[0].setBackgroundColor(getColor(R.color.colorAccent));
 
         //El seek y las opciones del peso
+        textWeight = findViewById(R.id.textWeightCachorro);
         skbWeight = findViewById(R.id.seekBarWeightCachorro);
         optionWeightArray[0] = findViewById(R.id.optionWeightCachorro1);
         optionWeightArray[1] = findViewById(R.id.optionWeightCachorro2);
         optionWeightArray[2] = findViewById(R.id.optionWeightCachorro3);
         optionWeightArray[3] = findViewById(R.id.optionWeightCachorro4);
         //Valor y color por default del peso
+        weight = getResources().getString(R.string.Weight);
+        textWeight.setText(weight + ": 0kg");
+        textWeight.setTextColor(getColor(R.color.colorRed));
         weightValue = 0;
         optionWeightArray[0].setBackgroundColor(getColor(R.color.colorAccent));
 
         //El seek, las opciones y el valor de la edad
+        textAge = findViewById(R.id.textAgeCachorro);
         skbAge = findViewById(R.id.seekBarAgeCachorro);
         //Valor por default de la edad
+        age = getResources().getString(R.string.Age);
+        textAge.setText(age + ": 0 meses");
+        textAge.setTextColor(getColor(R.color.colorRed));
         AgeValue = 0;
 
 
@@ -76,6 +94,12 @@ public class SistemaDifusoCachorro extends AppCompatActivity {
         skbSize.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                textSize.setText(size + ": " + progress + "cm");
+                if(progress == 0) {
+                    textSize.setTextColor(getColor(R.color.colorRed));
+                }else{
+                    textSize.setTextColor(getColor(R.color.colorBlack));
+                }
                 if(progress <= 8){
                     optionSizeArray[0].setBackgroundColor(getColor(R.color.colorAccent));
                     optionSizeArray[1].setBackgroundColor(getColor(R.color.colorWhite));
@@ -99,8 +123,8 @@ public class SistemaDifusoCachorro extends AppCompatActivity {
             }
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                String ValorTamaño = "Tamaño: " + SizeValue + "cm";
-                Toast.makeText(getApplicationContext(), ValorTamaño, Toast.LENGTH_SHORT).show();
+                //String ValorTamaño = "Tamaño: " + SizeValue + "cm";
+                //Toast.makeText(getApplicationContext(), ValorTamaño, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -108,14 +132,20 @@ public class SistemaDifusoCachorro extends AppCompatActivity {
         skbWeight.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                textWeight.setText(weight + ": " + progress + "kg");
+                if(progress == 0) {
+                    textWeight.setTextColor(getColor(R.color.colorRed));
+                }else{
+                    textWeight.setTextColor(getColor(R.color.colorBlack));
+                }
                 if(progress <= 15){
                     optionWeightArray[0].setBackgroundColor(getColor(R.color.colorAccent));
                     optionWeightArray[1].setBackgroundColor(getColor(R.color.colorWhite));
-                }else if(progress <= 30){
+                }else if(progress <= 25){
                     optionWeightArray[0].setBackgroundColor(getColor(R.color.colorWhite));
                     optionWeightArray[1].setBackgroundColor(getColor(R.color.colorAccent));
                     optionWeightArray[2].setBackgroundColor(getColor(R.color.colorWhite));
-                }else if(progress <= 60){
+                }else if(progress <= 35){
                     optionWeightArray[1].setBackgroundColor(getColor(R.color.colorWhite));
                     optionWeightArray[2].setBackgroundColor(getColor(R.color.colorAccent));
                     optionWeightArray[3].setBackgroundColor(getColor(R.color.colorWhite));
@@ -131,8 +161,8 @@ public class SistemaDifusoCachorro extends AppCompatActivity {
             }
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                String ValorPeso = "Peso: " + weightValue + "kg";
-                Toast.makeText(getApplicationContext(), ValorPeso, Toast.LENGTH_SHORT).show();
+                //String ValorPeso = "Peso: " + weightValue + "kg";
+                //Toast.makeText(getApplicationContext(), ValorPeso, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -140,6 +170,16 @@ public class SistemaDifusoCachorro extends AppCompatActivity {
         skbAge.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                if(progress == 1){
+                    textAge.setText(age + ": " + progress + " mes");
+                }else{
+                    textAge.setText(age + ": " + progress + " meses");
+                }
+                if(progress == 0) {
+                    textAge.setTextColor(getColor(R.color.colorRed));
+                }else{
+                    textAge.setTextColor(getColor(R.color.colorBlack));
+                }
                 AgeValue = progress;
             }
             @Override
@@ -148,8 +188,8 @@ public class SistemaDifusoCachorro extends AppCompatActivity {
             }
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                String ValorTamaño = "Edad: " + AgeValue + " meses";
-                Toast.makeText(getApplicationContext(), ValorTamaño, Toast.LENGTH_SHORT).show();
+                //String ValorTamaño = "Edad: " + AgeValue + " meses";
+                //Toast.makeText(getApplicationContext(), ValorTamaño, Toast.LENGTH_SHORT).show();
             }
         });
 
