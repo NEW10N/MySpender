@@ -75,9 +75,11 @@
 
             <LinearLayout
                 android:layout_width="340dp"
-                android:layout_height="66dp"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_gravity="center">
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:padding="1dp">
 
                 <TextView
                     android:id="@+id/optionSizeCachorro1"
@@ -134,6 +136,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
+                android:layout_marginTop="22dp"
                 android:text="@string/Weight"
                 android:textColor="#000"
                 android:textSize="24sp"
