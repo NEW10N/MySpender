@@ -91,25 +91,49 @@ public class SistemaDifusoAdulto extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 textSize.setText(size + ": " +progress + "cm");
+                /*
+                * Miniatura: 0 37
+                * Pequeño: 20 57
+                * Mediano 45 a 75
+                * Grande: 65 a 100
+                * */
                 if(progress == 0) {
                     textSize.setTextColor(getColor(R.color.colorRed));
-                    optionSizeArray[0].setBackgroundColor(getColor(R.color.colorWhite));
+                    optionSizeArray[0].setBackgroundColor(getColor(R.color.colorPantalla));
                 }else{
                     textSize.setTextColor(getColor(R.color.colorBlack));
-                    if(progress <= 8){
+                    if(progress <= 30){
                         optionSizeArray[0].setBackgroundColor(getColor(R.color.colorAccent));
-                        optionSizeArray[1].setBackgroundColor(getColor(R.color.colorWhite));
-                    }else if(progress <= 20){
-                        optionSizeArray[0].setBackgroundColor(getColor(R.color.colorWhite));
+                        optionSizeArray[1].setBackgroundColor(getColor(R.color.colorPantalla));
+                        if(progress >= 20){
+                            optionSizeArray[1].setBackgroundColor(getColor(R.color.colorOnAccent));
+                        }
+                    }else if(progress <= 50){
+                        optionSizeArray[0].setBackgroundColor(getColor(R.color.colorPantalla));
                         optionSizeArray[1].setBackgroundColor(getColor(R.color.colorAccent));
-                        optionSizeArray[2].setBackgroundColor(getColor(R.color.colorWhite));
-                    }else if(progress <= 30){
-                        optionSizeArray[1].setBackgroundColor(getColor(R.color.colorWhite));
+                        optionSizeArray[2].setBackgroundColor(getColor(R.color.colorPantalla));
+                        if (progress <= 37) {
+                            optionSizeArray[0].setBackgroundColor(getColor(R.color.colorOnAccent));
+                        }
+                        if (progress >= 45){
+                            optionSizeArray[2].setBackgroundColor(getColor(R.color.colorOnAccent));
+                        }
+                    }else if(progress <= 70){
+                        optionSizeArray[1].setBackgroundColor(getColor(R.color.colorPantalla));
                         optionSizeArray[2].setBackgroundColor(getColor(R.color.colorAccent));
-                        optionSizeArray[3].setBackgroundColor(getColor(R.color.colorWhite));
+                        optionSizeArray[3].setBackgroundColor(getColor(R.color.colorPantalla));
+                        if (progress <= 57){
+                            optionSizeArray[1].setBackgroundColor(getColor(R.color.colorOnAccent));
+                        }
+                        if (progress >= 65) {
+                            optionSizeArray[3].setBackgroundColor(getColor(R.color.colorOnAccent));
+                        }
                     }else {
-                        optionSizeArray[2].setBackgroundColor(getColor(R.color.colorWhite));
+                        optionSizeArray[2].setBackgroundColor(getColor(R.color.colorPantalla));
                         optionSizeArray[3].setBackgroundColor(getColor(R.color.colorAccent));
+                        if (progress <= 75) {
+                            optionSizeArray[2].setBackgroundColor(getColor(R.color.colorOnAccent));
+                        }
                     }
                 }
                 sizeValue = progress;
@@ -158,13 +182,13 @@ public class SistemaDifusoAdulto extends AppCompatActivity {
                 textActivity.setText(activity + ": " + progress);
                 if(progress == 0) {
                     textActivity.setTextColor(getColor(R.color.colorRed));
-                    optionActivityArray[0].setBackgroundColor(getColor(R.color.colorWhite));
+                    optionActivityArray[0].setBackgroundColor(getColor(R.color.colorPantalla));
                 }else{
                     textActivity.setTextColor(getColor(R.color.colorBlack));
                 }
                 if(progress != 0 && progress <= 3){
                     optionActivityArray[0].setBackgroundColor(getColor(R.color.colorAccent));
-                    optionActivityArray[1].setBackgroundColor(getColor(R.color.colorWhite));
+                    optionActivityArray[1].setBackgroundColor(getColor(R.color.colorPantalla));
                     if(progress >= 2){
                         optionActivityArray[1].setBackgroundColor(getColor(R.color.colorOnAccent));
                     }
@@ -174,9 +198,9 @@ public class SistemaDifusoAdulto extends AppCompatActivity {
                         optionActivityArray[1].setBackgroundColor(getColor(R.color.colorAccent));
                     }
                     if(progress == 5) {
-                        optionActivityArray[0].setBackgroundColor(getColor(R.color.colorWhite));
+                        optionActivityArray[0].setBackgroundColor(getColor(R.color.colorPantalla));
                         optionActivityArray[1].setBackgroundColor(getColor(R.color.colorAccent));
-                        optionActivityArray[2].setBackgroundColor(getColor(R.color.colorWhite));
+                        optionActivityArray[2].setBackgroundColor(getColor(R.color.colorPantalla));
                     }
                     if(progress == 6) {
                         optionActivityArray[1].setBackgroundColor(getColor(R.color.colorAccent));
@@ -186,7 +210,7 @@ public class SistemaDifusoAdulto extends AppCompatActivity {
                     optionActivityArray[1].setBackgroundColor(getColor(R.color.colorOnAccent));
                     optionActivityArray[2].setBackgroundColor(getColor(R.color.colorAccent));
                     if(progress >= 8){
-                        optionActivityArray[1].setBackgroundColor(getColor(R.color.colorWhite));
+                        optionActivityArray[1].setBackgroundColor(getColor(R.color.colorPantalla));
                     }
                 }
                 activityValue = progress;
@@ -329,8 +353,10 @@ public class SistemaDifusoAdulto extends AppCompatActivity {
         double solution = motor.getOutputValue("Comida");
         String informacion = "Una mascota con Tamaño de " + intTamano + ", un Peso Ideal de adulto de " + intPesoIdeal + " y una Actividad de " + intActividad
                 + " tiene una porción de comida diaria de : " + String.valueOf(solution) + " gramos, por lo tanto:";
+        int cantidad = (int) solution;
+        String mensajeFinal = "Cantidad: " + solution;
 
-        Toast.makeText(this, "Calculado", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, mensajeFinal, Toast.LENGTH_SHORT).show();
 
     }
 }

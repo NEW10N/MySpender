@@ -88,25 +88,49 @@ public class SistemaDifusoCachorro extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 textSize.setText(size + ": " + progress + "cm");
+                /*
+                 * Miniatura: 0 40
+                 * Pequeño: 20 60
+                 * Mediano 40 a 80
+                 * Grande: 65 a 90
+                 * */
                 if(progress == 0) {
                     textSize.setTextColor(getColor(R.color.colorRed));
-                    optionSizeArray[0].setBackgroundColor(getColor(R.color.colorWhite));
+                    optionSizeArray[0].setBackgroundColor(getColor(R.color.colorPantalla));
                 }else{
                     textSize.setTextColor(getColor(R.color.colorBlack));
-                    if(progress <= 8){
+                    if(progress <= 30){
                         optionSizeArray[0].setBackgroundColor(getColor(R.color.colorAccent));
-                        optionSizeArray[1].setBackgroundColor(getColor(R.color.colorWhite));
-                    }else if(progress <= 20){
-                        optionSizeArray[0].setBackgroundColor(getColor(R.color.colorWhite));
+                        optionSizeArray[1].setBackgroundColor(getColor(R.color.colorPantalla));
+                        if(progress >= 20){
+                            optionSizeArray[1].setBackgroundColor(getColor(R.color.colorOnAccent));
+                        }
+                    }else if(progress <= 50){
+                        optionSizeArray[0].setBackgroundColor(getColor(R.color.colorPantalla));
                         optionSizeArray[1].setBackgroundColor(getColor(R.color.colorAccent));
-                        optionSizeArray[2].setBackgroundColor(getColor(R.color.colorWhite));
-                    }else if(progress <= 30){
-                        optionSizeArray[1].setBackgroundColor(getColor(R.color.colorWhite));
+                        optionSizeArray[2].setBackgroundColor(getColor(R.color.colorPantalla));
+                        if (progress <= 40) {
+                            optionSizeArray[0].setBackgroundColor(getColor(R.color.colorOnAccent));
+                        }
+                        if (progress >= 45){
+                            optionSizeArray[2].setBackgroundColor(getColor(R.color.colorOnAccent));
+                        }
+                    }else if(progress <= 70){
+                        optionSizeArray[1].setBackgroundColor(getColor(R.color.colorPantalla));
                         optionSizeArray[2].setBackgroundColor(getColor(R.color.colorAccent));
-                        optionSizeArray[3].setBackgroundColor(getColor(R.color.colorWhite));
+                        optionSizeArray[3].setBackgroundColor(getColor(R.color.colorPantalla));
+                        if (progress <= 60){
+                            optionSizeArray[1].setBackgroundColor(getColor(R.color.colorOnAccent));
+                        }
+                        if (progress >= 65) {
+                            optionSizeArray[3].setBackgroundColor(getColor(R.color.colorOnAccent));
+                        }
                     }else {
-                        optionSizeArray[2].setBackgroundColor(getColor(R.color.colorWhite));
+                        optionSizeArray[2].setBackgroundColor(getColor(R.color.colorPantalla));
                         optionSizeArray[3].setBackgroundColor(getColor(R.color.colorAccent));
+                        if (progress <= 80) {
+                            optionSizeArray[2].setBackgroundColor(getColor(R.color.colorOnAccent));
+                        }
                     }
                 }
                 SizeValue = progress;
