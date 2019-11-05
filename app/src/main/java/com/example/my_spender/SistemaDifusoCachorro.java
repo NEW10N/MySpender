@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.view.View;
 
 import com.fuzzylite.*;
 import com.fuzzylite.activation.*;
@@ -24,26 +25,19 @@ import androidx.appcompat.app.AppCompatActivity;
 public class SistemaDifusoCachorro extends AppCompatActivity {
 
     //Datos para el seek del tamaño
-    private TextView textSize;
     private SeekBar skbSize;
-    private TextView textSizeValue;
-    private String textSizeAnswer;
-
+    private TextView optionSizeArray[] = new TextView[4];
     //cantidad del seek del tamaño
     private int SizeValue;
 
-    //Datos para el seek del tamaño
+    //Datos para el seek del peso
     private SeekBar skbWeight;
-
-    //cantidad del seek del tamaño
+    private TextView optionWeightArray[] = new TextView[4];
+    //cantidad del seek del peso
     private int weightValue;
 
     //Datos para el seek de la edad
     private SeekBar skbAge;
-
-    //Asignacion a la seekBar Edad
-
-
     //cantidad del seek de la edad
     private int AgeValue;
 
@@ -52,43 +46,50 @@ public class SistemaDifusoCachorro extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_confcachorro);
 
-        //El texto, seek y valor del seek del tamaño
-        textSize = findViewById(R.id.textSize);
-        skbSize = findViewById(R.id.seekBarSize);
-        textSizeValue = findViewById(R.id.textSize);
-
-        //El seek del peso
-        skbWeight = findViewById(R.id.seekBarWeight);
-
-        //Texto y valor por default del tamaño
-        textSizeAnswer = getResources().getString(R.string.Size);
-        textSize.setText(textSizeAnswer + ": " + "Miniatura");
+        //El seek y las opciones del seek del tamaño
+        skbSize = findViewById(R.id.seekBarSizeCachorro);
+        optionSizeArray[0] = findViewById(R.id.optionSizeCachorro1);
+        optionSizeArray[1] = findViewById(R.id.optionSizeCachorro2);
+        optionSizeArray[2] = findViewById(R.id.optionSizeCachorro3);
+        optionSizeArray[3] = findViewById(R.id.optionSizeCachorro4);
+        //Valor y color por default del tamaño
         SizeValue = 0;
+        optionSizeArray[0].setBackgroundColor(getColor(R.color.colorAccent));
 
-        //Valor por default del peso
+        //El seek y las opciones del peso
+        skbWeight = findViewById(R.id.seekBarWeightCachorro);
+        optionWeightArray[0] = findViewById(R.id.optionWeightCachorro1);
+        optionWeightArray[1] = findViewById(R.id.optionWeightCachorro2);
+        optionWeightArray[2] = findViewById(R.id.optionWeightCachorro3);
+        optionWeightArray[3] = findViewById(R.id.optionWeightCachorro4);
+        //Valor y color por default del peso
         weightValue = 0;
+        optionWeightArray[0].setBackgroundColor(getColor(R.color.colorAccent));
 
-        //El seek de la edad
-        skbWeight = findViewById(R.id.seekBarAge);
-
-        //Valor por default del peso
+        //El seek, las opciones y el valor de la edad
+        skbAge = findViewById(R.id.seekBarAgeCachorro);
+        //Valor por default de la edad
         AgeValue = 0;
 
-        //El seek de la edad
-        skbAge = findViewById(R.id.seekBarAge);
+
         //Metodos del seek del tamaño
         skbSize.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                textSizeValue.setText(progress + "cm");
                 if(progress <= 8){
-                    textSize.setText(textSizeAnswer + ": " + "Miniatura");
+                    optionSizeArray[0].setBackgroundColor(getColor(R.color.colorAccent));
+                    optionSizeArray[1].setBackgroundColor(getColor(R.color.colorWhite));
                 }else if(progress <= 20){
-                    textSize.setText(textSizeAnswer + ": " + "Pequeño");
+                    optionSizeArray[0].setBackgroundColor(getColor(R.color.colorWhite));
+                    optionSizeArray[1].setBackgroundColor(getColor(R.color.colorAccent));
+                    optionSizeArray[2].setBackgroundColor(getColor(R.color.colorWhite));
                 }else if(progress <= 30){
-                    textSize.setText(textSizeAnswer + ": " + "Mediano");
+                    optionSizeArray[1].setBackgroundColor(getColor(R.color.colorWhite));
+                    optionSizeArray[2].setBackgroundColor(getColor(R.color.colorAccent));
+                    optionSizeArray[3].setBackgroundColor(getColor(R.color.colorWhite));
                 }else {
-                    textSize.setText(textSizeAnswer + ": " + "Grande");
+                    optionSizeArray[2].setBackgroundColor(getColor(R.color.colorWhite));
+                    optionSizeArray[3].setBackgroundColor(getColor(R.color.colorAccent));
                 }
                 SizeValue = progress;
             }
@@ -98,7 +99,8 @@ public class SistemaDifusoCachorro extends AppCompatActivity {
             }
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-
+                String ValorTamaño = "Tamaño: " + SizeValue + "cm";
+                Toast.makeText(getApplicationContext(), ValorTamaño, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -106,6 +108,21 @@ public class SistemaDifusoCachorro extends AppCompatActivity {
         skbWeight.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                if(progress <= 15){
+                    optionWeightArray[0].setBackgroundColor(getColor(R.color.colorAccent));
+                    optionWeightArray[1].setBackgroundColor(getColor(R.color.colorWhite));
+                }else if(progress <= 30){
+                    optionWeightArray[0].setBackgroundColor(getColor(R.color.colorWhite));
+                    optionWeightArray[1].setBackgroundColor(getColor(R.color.colorAccent));
+                    optionWeightArray[2].setBackgroundColor(getColor(R.color.colorWhite));
+                }else if(progress <= 60){
+                    optionWeightArray[1].setBackgroundColor(getColor(R.color.colorWhite));
+                    optionWeightArray[2].setBackgroundColor(getColor(R.color.colorAccent));
+                    optionWeightArray[3].setBackgroundColor(getColor(R.color.colorWhite));
+                }else {
+                    optionWeightArray[2].setBackgroundColor(getColor(R.color.colorWhite));
+                    optionWeightArray[3].setBackgroundColor(getColor(R.color.colorAccent));
+                }
                 weightValue = progress;
             }
             @Override
@@ -114,7 +131,8 @@ public class SistemaDifusoCachorro extends AppCompatActivity {
             }
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-
+                String ValorPeso = "Peso: " + weightValue + "kg";
+                Toast.makeText(getApplicationContext(), ValorPeso, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -130,13 +148,14 @@ public class SistemaDifusoCachorro extends AppCompatActivity {
             }
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-
+                String ValorTamaño = "Edad: " + AgeValue + " meses";
+                Toast.makeText(getApplicationContext(), ValorTamaño, Toast.LENGTH_SHORT).show();
             }
         });
 
     }
 
-    public void ActivateFuzzySystem() {
+    public void ActivateFuzzySystem(View v) {
         if(SizeValue == 0){
             Toast.makeText(this, "Falta información del tamaño", Toast.LENGTH_SHORT).show();
         }else if(weightValue == 0) {

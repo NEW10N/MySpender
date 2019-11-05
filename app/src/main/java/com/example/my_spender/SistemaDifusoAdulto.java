@@ -1,6 +1,7 @@
 package com.example.my_spender;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,7 +27,6 @@ public class SistemaDifusoAdulto extends AppCompatActivity {
     //Datos para el seek del tamaño
     private TextView textSize;
     private SeekBar skbSize;
-    private TextView textSizeValue;
     private String textSizeAnswer;
 
     //cantidad del seek del tamaño
@@ -50,43 +50,32 @@ public class SistemaDifusoAdulto extends AppCompatActivity {
         setContentView(R.layout.fragment_confadulto);
 
         //El texto, seek y valor del seek del tamaño
-        textSize = findViewById(R.id.texttamañodogo);
-        skbSize = findViewById(R.id.seekBartadogo);
-        textSizeValue = findViewById(R.id.texttamañodogo);
-
-        //El seek del peso
-        skbWeight = findViewById(R.id.seekBarWeight);
-
+        textSize = findViewById(R.id.textSizeAdulto);
+        skbSize = findViewById(R.id.seekBarSizeAdulto);
         //Texto y valor por default del tamaño
         textSizeAnswer = getResources().getString(R.string.Size);
-        textSize.setText(textSizeAnswer + ": " + "Miniatura");
+        textSize.setText(textSizeAnswer + ": " + "0cm");
         SizeValue = 0;
 
+        //El seek del peso
+        skbWeight = findViewById(R.id.seekBarWeightAdulto);
         //Valor por default del peso
         weightValue = 0;
 
-        //El seek de la edad
-        skbWeight = findViewById(R.id.seekBarpesodogo);
-
-        //Valor por default del peso
+        //El seek de la actividad fisica
+        skbActivity = findViewById(R.id.seekBarActivityAdulto);
+        //Valor por default de la actividad fisica
         ActivityValue = 0;
-
-        //El seek de la actividad
-        skbActivity = findViewById(R.id.seekBarActividad);
 
         //Metodos del seek del tamaño
         skbSize.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                textSizeValue.setText(progress + "cm");
+                textSize.setText(textSizeAnswer + ": " +progress + "cm");
                 if(progress <= 8){
-                    textSize.setText(textSizeAnswer + ": " + "Miniatura");
                 }else if(progress <= 20){
-                    textSize.setText(textSizeAnswer + ": " + "Pequeño");
                 }else if(progress <= 30){
-                    textSize.setText(textSizeAnswer + ": " + "Mediano");
                 }else {
-                    textSize.setText(textSizeAnswer + ": " + "Grande");
                 }
                 SizeValue = progress;
             }
@@ -134,7 +123,7 @@ public class SistemaDifusoAdulto extends AppCompatActivity {
 
     }
 
-    public void ActivateFuzzySystem() {
+    public void ActivateFuzzySystem(View v) {
         if(SizeValue == 0){
             Toast.makeText(this, "Falta información del tamaño", Toast.LENGTH_SHORT).show();
         }else if(weightValue == 0) {
