@@ -46,6 +46,18 @@ public class SistemaDifusoCachorro extends AppCompatActivity {
     //cantidad del seek de la edad
     private int AgeValue;
 
+    //CONDICIONES CLAVES
+    private int minWeight;
+    private int maxWeight;
+    //FIN DE CONDICIONES CLAVES
+
+    //FUNCIÓN BOOLEANA CLAVE
+    public boolean esCorrectoONo(int numero){
+        boolean result = (minWeight <= numero && numero <= maxWeight);
+        return result;
+    }
+    //FIN DE LA FUNCIÓN BOOLEANA CLAVE
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,10 +101,10 @@ public class SistemaDifusoCachorro extends AppCompatActivity {
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 textSize.setText(size + ": " + progress + "cm");
                 /*
-                 * Miniatura: 0 40
-                 * Pequeño: 20 60
-                 * Mediano 40 a 80
-                 * Grande: 65 a 90
+                 * Miniatura: 0 35
+                 * Pequeño: 25 55
+                 * Mediano 45 a 75
+                 * Grande: 65 a 80
                  * */
                 if(progress == 0) {
                     textSize.setTextColor(getColor(R.color.colorRed));
@@ -100,38 +112,56 @@ public class SistemaDifusoCachorro extends AppCompatActivity {
                 }else{
                     textSize.setTextColor(getColor(R.color.colorBlack));
                     if(progress <= 30){
+                        minWeight = 1;
+                        maxWeight = 3;
                         optionSizeArray[0].setBackgroundColor(getColor(R.color.colorAccent));
                         optionSizeArray[1].setBackgroundColor(getColor(R.color.colorPantalla));
-                        if(progress >= 20){
+                        if(progress > 25){
+                            maxWeight = 13;
                             optionSizeArray[1].setBackgroundColor(getColor(R.color.colorOnAccent));
                         }
                     }else if(progress <= 50){
+                        minWeight = 4;
+                        maxWeight = 13;
                         optionSizeArray[0].setBackgroundColor(getColor(R.color.colorPantalla));
                         optionSizeArray[1].setBackgroundColor(getColor(R.color.colorAccent));
                         optionSizeArray[2].setBackgroundColor(getColor(R.color.colorPantalla));
-                        if (progress <= 40) {
+                        if (progress < 35) {
+                            minWeight = 1;
                             optionSizeArray[0].setBackgroundColor(getColor(R.color.colorOnAccent));
                         }
-                        if (progress >= 45){
+                        if (progress > 45){
+                            maxWeight = 22;
                             optionSizeArray[2].setBackgroundColor(getColor(R.color.colorOnAccent));
                         }
                     }else if(progress <= 70){
+                        minWeight = 14;
+                        maxWeight = 22;
                         optionSizeArray[1].setBackgroundColor(getColor(R.color.colorPantalla));
                         optionSizeArray[2].setBackgroundColor(getColor(R.color.colorAccent));
                         optionSizeArray[3].setBackgroundColor(getColor(R.color.colorPantalla));
-                        if (progress <= 60){
+                        if (progress < 55){
+                            minWeight = 4;
                             optionSizeArray[1].setBackgroundColor(getColor(R.color.colorOnAccent));
                         }
-                        if (progress >= 65) {
+                        if (progress > 65) {
+                            maxWeight = 40;
                             optionSizeArray[3].setBackgroundColor(getColor(R.color.colorOnAccent));
                         }
                     }else {
+                        minWeight = 22;
                         optionSizeArray[2].setBackgroundColor(getColor(R.color.colorPantalla));
                         optionSizeArray[3].setBackgroundColor(getColor(R.color.colorAccent));
-                        if (progress <= 80) {
+                        if (progress <= 74) {
+                            minWeight = 14;
                             optionSizeArray[2].setBackgroundColor(getColor(R.color.colorOnAccent));
                         }
                     }
+                }
+                if(esCorrectoONo(weightValue)){
+                    textWeight.setTextColor(getColor(R.color.colorBlack));
+                }else {
+                    textWeight.setTextColor(getColor(R.color.colorRed));
                 }
                 SizeValue = progress;
             }
@@ -156,10 +186,10 @@ public class SistemaDifusoCachorro extends AppCompatActivity {
                 }else{
                     textWeight.setTextColor(getColor(R.color.colorBlack));
                 }
-                if(progress <= 15){
-                }else if(progress <= 25){
-                }else if(progress <= 35){
+                if(esCorrectoONo(progress)){
+                    textWeight.setTextColor(getColor(R.color.colorBlack));
                 }else {
+                    textWeight.setTextColor(getColor(R.color.colorRed));
                 }
                 weightValue = progress;
             }
@@ -364,7 +394,14 @@ public class SistemaDifusoCachorro extends AppCompatActivity {
         String informacion = "Una mascota con Tamaño de " + intTamano + ", un Peso Ideal de adulto de " + intPesoIdeal + " y una Edad de " + intEdad + " tiene una porción de comida diaria de : "
                 + String.valueOf(solution) + " gramos, por lo tanto:";
 
-        Toast.makeText(this, "Calculado", Toast.LENGTH_SHORT).show();
+        int cantidad = (int) solution;
+        String mensajeFinal;
+        if(cantidad == 0) {
+            mensajeFinal = "Error con el peso";
+        }else {
+            mensajeFinal = "Cantidad: " + cantidad + " gramos";
+        }
+        Toast.makeText(this, mensajeFinal, Toast.LENGTH_SHORT).show();
 
     }
 }

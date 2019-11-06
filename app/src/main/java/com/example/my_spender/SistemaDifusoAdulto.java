@@ -388,6 +388,7 @@ public class SistemaDifusoAdulto extends AppCompatActivity {
         double solution = motor.getOutputValue("Comida");
         String informacion = "Una mascota con Tamaño de " + intTamano + ", un Peso Ideal de adulto de " + intPesoIdeal + " y una Actividad de " + intActividad
                 + " tiene una porción de comida diaria de : " + String.valueOf(solution) + " gramos, por lo tanto:";
+
         int cantidad = (int) solution;
         String mensajeFinal;
         if(cantidad == 0) {
@@ -395,8 +396,6 @@ public class SistemaDifusoAdulto extends AppCompatActivity {
         }else {
             mensajeFinal = "Cantidad: " + cantidad + " gramos";
         }
-
-
         Toast.makeText(this, mensajeFinal, Toast.LENGTH_SHORT).show();
 
     }
