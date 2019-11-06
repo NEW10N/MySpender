@@ -39,6 +39,7 @@ public class SistemaDifusoAdulto extends AppCompatActivity {
     //cantidad del seek del peso
     private int weightValue;
 
+
     //Datos para el seek de la actividad fisica
     private TextView textActivity;
     private SeekBar skbActivity;
@@ -46,6 +47,20 @@ public class SistemaDifusoAdulto extends AppCompatActivity {
     private TextView optionActivityArray[] = new TextView[3];
     //cantidad del seek de la actividad fisica
     private int activityValue;
+
+    //CONDICIONES CLAVES
+    private int minWeight;
+    private int maxWeight;
+    //FIN DE CONDICIONES CLAVES
+
+    //FUNCIÓN BOOLEANA CLAVE
+    public boolean esCorrectoONo(int numero){
+        boolean result = (minWeight <= numero && numero <= maxWeight);
+        return result;
+    }
+    //FIN DE LA FUNCIÓN BOOLEANA CLAVE
+
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -73,6 +88,8 @@ public class SistemaDifusoAdulto extends AppCompatActivity {
         textWeight.setText(weight + ": " + "0kg");
         textWeight.setTextColor(getColor(R.color.colorRed));
         weightValue = 0;
+        minWeight = 0;
+        maxWeight = 0;
 
         //El seek de la actividad fisica
         textActivity = findViewById(R.id.textActivityAdulto);
@@ -103,38 +120,56 @@ public class SistemaDifusoAdulto extends AppCompatActivity {
                 }else{
                     textSize.setTextColor(getColor(R.color.colorBlack));
                     if(progress <= 30){
+                        minWeight = 1;
+                        maxWeight = 5;
                         optionSizeArray[0].setBackgroundColor(getColor(R.color.colorAccent));
                         optionSizeArray[1].setBackgroundColor(getColor(R.color.colorPantalla));
-                        if(progress >= 20){
+                        if(progress > 25){
+                            maxWeight = 10;
                             optionSizeArray[1].setBackgroundColor(getColor(R.color.colorOnAccent));
                         }
                     }else if(progress <= 50){
+                        minWeight = 5;
+                        maxWeight = 10;
                         optionSizeArray[0].setBackgroundColor(getColor(R.color.colorPantalla));
                         optionSizeArray[1].setBackgroundColor(getColor(R.color.colorAccent));
                         optionSizeArray[2].setBackgroundColor(getColor(R.color.colorPantalla));
-                        if (progress <= 37) {
+                        if (progress <= 35) {
+                            minWeight = 2;
                             optionSizeArray[0].setBackgroundColor(getColor(R.color.colorOnAccent));
                         }
-                        if (progress >= 45){
+                        if (progress > 45){
+                            maxWeight = 15;
                             optionSizeArray[2].setBackgroundColor(getColor(R.color.colorOnAccent));
                         }
                     }else if(progress <= 70){
+                        minWeight = 10;
+                        maxWeight = 15;
                         optionSizeArray[1].setBackgroundColor(getColor(R.color.colorPantalla));
                         optionSizeArray[2].setBackgroundColor(getColor(R.color.colorAccent));
                         optionSizeArray[3].setBackgroundColor(getColor(R.color.colorPantalla));
-                        if (progress <= 57){
+                        if (progress <= 55){
+                            minWeight = 5;
                             optionSizeArray[1].setBackgroundColor(getColor(R.color.colorOnAccent));
                         }
                         if (progress >= 65) {
+                            maxWeight = 40;
                             optionSizeArray[3].setBackgroundColor(getColor(R.color.colorOnAccent));
                         }
                     }else {
+                        minWeight = 15;
                         optionSizeArray[2].setBackgroundColor(getColor(R.color.colorPantalla));
                         optionSizeArray[3].setBackgroundColor(getColor(R.color.colorAccent));
-                        if (progress <= 75) {
+                        if (progress < 75) {
+                            minWeight = 10;
                             optionSizeArray[2].setBackgroundColor(getColor(R.color.colorOnAccent));
                         }
                     }
+                }
+                if(esCorrectoONo(weightValue)){
+                    textWeight.setTextColor(getColor(R.color.colorBlack));
+                }else {
+                    textWeight.setTextColor(getColor(R.color.colorRed));
                 }
                 sizeValue = progress;
             }
@@ -158,10 +193,10 @@ public class SistemaDifusoAdulto extends AppCompatActivity {
                 }else{
                     textWeight.setTextColor(getColor(R.color.colorBlack));
                 }
-                if(progress <= 8){
-                }else if(progress <= 20){
-                }else if(progress <= 30){
+                if(esCorrectoONo(progress)){
+                    textWeight.setTextColor(getColor(R.color.colorBlack));
                 }else {
+                    textWeight.setTextColor(getColor(R.color.colorRed));
                 }
                 weightValue = progress;
             }
@@ -354,7 +389,13 @@ public class SistemaDifusoAdulto extends AppCompatActivity {
         String informacion = "Una mascota con Tamaño de " + intTamano + ", un Peso Ideal de adulto de " + intPesoIdeal + " y una Actividad de " + intActividad
                 + " tiene una porción de comida diaria de : " + String.valueOf(solution) + " gramos, por lo tanto:";
         int cantidad = (int) solution;
-        String mensajeFinal = "Cantidad: " + solution;
+        String mensajeFinal;
+        if(cantidad == 0) {
+            mensajeFinal = "Error con el peso";
+        }else {
+            mensajeFinal = "Cantidad: " + cantidad + " gramos";
+        }
+
 
         Toast.makeText(this, mensajeFinal, Toast.LENGTH_SHORT).show();
 
