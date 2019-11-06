@@ -109,13 +109,16 @@ public class SistemaDifusoCachorro extends AppCompatActivity {
                 if(progress == 0) {
                     textSize.setTextColor(getColor(R.color.colorRed));
                     optionSizeArray[0].setBackgroundColor(getColor(R.color.colorPantalla));
+                    optionSizeArray[0].setTextColor(getColor(R.color.colorBlack));
                 }else{
                     textSize.setTextColor(getColor(R.color.colorBlack));
                     if(progress <= 30){
                         minWeight = 1;
                         maxWeight = 3;
                         optionSizeArray[0].setBackgroundColor(getColor(R.color.colorAccent));
+                        optionSizeArray[0].setTextColor(getColor(R.color.colorWhite));
                         optionSizeArray[1].setBackgroundColor(getColor(R.color.colorPantalla));
+                        optionSizeArray[1].setTextColor(getColor(R.color.colorBlack));
                         if(progress > 25){
                             maxWeight = 13;
                             optionSizeArray[1].setBackgroundColor(getColor(R.color.colorOnAccent));
@@ -124,8 +127,11 @@ public class SistemaDifusoCachorro extends AppCompatActivity {
                         minWeight = 4;
                         maxWeight = 13;
                         optionSizeArray[0].setBackgroundColor(getColor(R.color.colorPantalla));
+                        optionSizeArray[0].setTextColor(getColor(R.color.colorBlack));
                         optionSizeArray[1].setBackgroundColor(getColor(R.color.colorAccent));
+                        optionSizeArray[1].setTextColor(getColor(R.color.colorWhite));
                         optionSizeArray[2].setBackgroundColor(getColor(R.color.colorPantalla));
+                        optionSizeArray[2].setTextColor(getColor(R.color.colorBlack));
                         if (progress < 35) {
                             minWeight = 1;
                             optionSizeArray[0].setBackgroundColor(getColor(R.color.colorOnAccent));
@@ -138,8 +144,11 @@ public class SistemaDifusoCachorro extends AppCompatActivity {
                         minWeight = 14;
                         maxWeight = 22;
                         optionSizeArray[1].setBackgroundColor(getColor(R.color.colorPantalla));
+                        optionSizeArray[1].setTextColor(getColor(R.color.colorBlack));
                         optionSizeArray[2].setBackgroundColor(getColor(R.color.colorAccent));
+                        optionSizeArray[2].setTextColor(getColor(R.color.colorWhite));
                         optionSizeArray[3].setBackgroundColor(getColor(R.color.colorPantalla));
+                        optionSizeArray[3].setTextColor(getColor(R.color.colorBlack));
                         if (progress < 55){
                             minWeight = 4;
                             optionSizeArray[1].setBackgroundColor(getColor(R.color.colorOnAccent));
@@ -151,7 +160,9 @@ public class SistemaDifusoCachorro extends AppCompatActivity {
                     }else {
                         minWeight = 22;
                         optionSizeArray[2].setBackgroundColor(getColor(R.color.colorPantalla));
+                        optionSizeArray[2].setTextColor(getColor(R.color.colorBlack));
                         optionSizeArray[3].setBackgroundColor(getColor(R.color.colorAccent));
+                        optionSizeArray[3].setTextColor(getColor(R.color.colorWhite));
                         if (progress <= 74) {
                             minWeight = 14;
                             optionSizeArray[2].setBackgroundColor(getColor(R.color.colorOnAccent));
