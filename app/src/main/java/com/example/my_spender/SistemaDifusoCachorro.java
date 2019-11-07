@@ -1,10 +1,14 @@
 package com.example.my_spender;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.my_spender.ui.configuraciones.CantidadttFragment;
 import com.fuzzylite.*;
 import com.fuzzylite.activation.*;
 import com.fuzzylite.defuzzifier.*;
@@ -20,6 +24,8 @@ import com.fuzzylite.variable.*;
 import java.util.Scanner;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 public class SistemaDifusoCachorro extends AppCompatActivity {
 
@@ -28,7 +34,7 @@ public class SistemaDifusoCachorro extends AppCompatActivity {
     private SeekBar skbSize;
     private TextView textSizeValue;
     private String textSizeAnswer;
-
+    private Button sctt;
     //cantidad del seek del tamaño
     private int SizeValue;
 
@@ -101,7 +107,16 @@ public class SistemaDifusoCachorro extends AppCompatActivity {
 
             }
         });
-
+        //Mover a fragment
+        sctt = (Button) findViewById(R.id.btnsctc);
+        sctt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CantidadttFragment fragment = new CantidadttFragment();
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.confCachorro, fragment).commit();
+            }
+        });
         //Metodos del seek del tamaño
         skbWeight.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
