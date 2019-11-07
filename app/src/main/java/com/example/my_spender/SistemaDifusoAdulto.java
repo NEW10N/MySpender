@@ -1,10 +1,13 @@
 package com.example.my_spender;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.my_spender.ui.configuraciones.CantidadttFragment;
 import com.fuzzylite.*;
 import com.fuzzylite.activation.*;
 import com.fuzzylite.defuzzifier.*;
@@ -20,6 +23,7 @@ import com.fuzzylite.variable.*;
 import java.util.Scanner;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 public class SistemaDifusoAdulto extends AppCompatActivity {
 
@@ -28,7 +32,7 @@ public class SistemaDifusoAdulto extends AppCompatActivity {
     private SeekBar skbSize;
     private TextView textSizeValue;
     private String textSizeAnswer;
-
+    private Button cta;
     //cantidad del seek del tamaño
     private int SizeValue;
 
@@ -99,7 +103,17 @@ public class SistemaDifusoAdulto extends AppCompatActivity {
 
             }
         });
-
+        //Transaccion a cantidad antes
+        cta = (Button) findViewById(R.id.btnscta);
+        cta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CantidadttFragment fragment = new CantidadttFragment();
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.conAdulto, fragment);
+                transaction.commit();
+            }
+        });
         //Metodos del seek del tamaño
         skbWeight.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override

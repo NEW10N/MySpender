@@ -24,7 +24,6 @@ import com.fuzzylite.variable.*;
 import java.util.Scanner;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 public class SistemaDifusoCachorro extends AppCompatActivity {
@@ -113,8 +112,9 @@ public class SistemaDifusoCachorro extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 CantidadttFragment fragment = new CantidadttFragment();
-                FragmentManager fragmentManager = getSupportFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.confCachorro, fragment).commit();
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.confCachorro, fragment);
+                transaction.commit();
             }
         });
         //Metodos del seek del tamaño

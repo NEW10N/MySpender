@@ -56,15 +56,6 @@
         android:id="@+id/cantidadttFragment"
         android:name="com.example.my_spender.ui.configuraciones.CantidadttFragment"
         android:label="fragment_cantidadantes"
-        tools:layout="@layout/fragment_cantidadantes" >
-        <action
-            android:id="@+id/action_cantidadttFragment_to_conHora"
-            app:destination="@id/conHora" />
-    </fragment>
-    <fragment
-        android:id="@+id/conHora"
-        android:name="com.example.my_spender.ui.configuraciones.HoraFragment"
-        android:label="fragment_confhora"
-        tools:layout="@layout/fragment_confhora" />
+        tools:layout="@layout/fragment_cantidadantes" />
 
 </navigation>

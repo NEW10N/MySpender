@@ -9,6 +9,8 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.Navigation;
 
 import com.example.my_spender.R;
@@ -27,9 +29,14 @@ public class CantidadttFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 //Toast.makeText(getActivity(),"Going to Fragment")
-                Navigation.findNavController(getView()).navigate(R.id.action_cantidadttFragment_to_conHora);
+                HoraFragment fragment = new HoraFragment();
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.Cantidadtt, fragment)
+                        .addToBackStack(null)
+                        .commit();
             }
         });
         return view;
     }
 }
+
