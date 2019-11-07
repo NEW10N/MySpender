@@ -28,7 +28,7 @@
         android:id="@+id/nav_configuracion_perfil"
         android:name="com.example.my_spender.ui.configuraciones.ConfiguracionesFragment"
         android:label="@string/menu_configuraciones"
-        tools:layout="@layout/fragment_configuraciones" >
+        tools:layout="@layout/fragment_configuraciones">
         <action
             android:id="@+id/action_nav_configuracion_perfil_to_sistemaDifusoCachorro"
             app:destination="@id/sistemaDifusoCachorro" />
@@ -46,11 +46,16 @@
         android:id="@+id/sistemaDifusoCachorro"
         android:name="com.example.my_spender.SistemaDifusoCachorro"
         android:label="fragment_confcachorro"
-        tools:layout="@layout/fragment_confcachorro" />
+        tools:layout="@layout/fragment_confcachorro"/>
     <activity
         android:id="@+id/sistemaDifusoAdulto"
         android:name="com.example.my_spender.SistemaDifusoAdulto"
         android:label="fragment_confadulto"
         tools:layout="@layout/fragment_confadulto" />
+    <fragment
+        android:id="@+id/cantidadttFragment"
+        android:name="com.example.my_spender.ui.configuraciones.CantidadttFragment"
+        android:label="fragment_cantidadantes"
+        tools:layout="@layout/fragment_cantidadantes" />
 
 </navigation>
