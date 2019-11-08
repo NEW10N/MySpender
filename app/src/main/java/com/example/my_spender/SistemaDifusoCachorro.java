@@ -192,6 +192,7 @@ public class SistemaDifusoCachorro extends AppCompatActivity {
             }
         });
         //Mover a fragment
+        /*
         sctt = (Button) findViewById(R.id.btnsctc);
         sctt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -202,6 +203,7 @@ public class SistemaDifusoCachorro extends AppCompatActivity {
                 transaction.commit();
             }
         });
+         */
         //Metodos del seek del tamaño
         skbWeight.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -424,10 +426,21 @@ public class SistemaDifusoCachorro extends AppCompatActivity {
         String mensajeFinal;
         if(cantidad == 0) {
             mensajeFinal = "Error con el peso";
+            Toast.makeText(this, mensajeFinal, Toast.LENGTH_SHORT).show();
         }else {
-            mensajeFinal = "Cantidad: " + cantidad + " gramos";
+            CantidadttFragment fragment = new CantidadttFragment();
+
+            //Se crea un paquete donde se almacena el dato de croquetas
+            Bundle cantidadCroquetas = new Bundle();
+            cantidadCroquetas.putInt("Croquetas", cantidad);
+            //Se envia el paquete a la siguiente fragment
+            fragment.setArguments(cantidadCroquetas);
+
+            //Se traslada el fragment
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.confCachorro, fragment);
+            transaction.commit();
         }
-        Toast.makeText(this, mensajeFinal, Toast.LENGTH_SHORT).show();
 
     }
 }
