@@ -10,6 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".activity_consejos"
+            android:label="@string/title_activity_consejos"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
             android:name=".home"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -29,17 +33,13 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".progress"
-            android:theme="@style/AppTheme.NoActionBar"/>
-
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".SistemaDifusoCachorro"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".SistemaDifusoAdulto"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait" />
     </application>
-
 
 </manifest>

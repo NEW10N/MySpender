@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/nav_home">
+    app:startDestination="@+id/nav_home">
 
 
     <fragment
@@ -15,8 +15,7 @@
     <fragment
         android:id="@+id/nav_consejos"
         android:name="com.example.my_spender.ui.consejos.ConsejosFragment"
-        android:label="@string/menu_consejos"
-        tools:layout="@layout/fragment_consejos" />
+        android:label="@string/menu_consejos" />
 
     <fragment
         android:id="@+id/nav_conectividad"
@@ -28,7 +27,7 @@
         android:id="@+id/nav_configuracion_perfil"
         android:name="com.example.my_spender.ui.configuraciones.ConfiguracionesFragment"
         android:label="@string/menu_configuraciones"
-        tools:layout="@layout/fragment_configuraciones" >
+        tools:layout="@layout/fragment_configuraciones">
         <action
             android:id="@+id/action_nav_configuracion_perfil_to_sistemaDifusoCachorro"
             app:destination="@id/sistemaDifusoCachorro" />
@@ -52,5 +51,20 @@
         android:name="com.example.my_spender.SistemaDifusoAdulto"
         android:label="fragment_confadulto"
         tools:layout="@layout/fragment_confadulto" />
+    <fragment
+        android:id="@+id/placeholderFragment"
+        android:name="com.example.my_spender.ui.main.PlaceholderFragment"
+        android:label="fragment_consejos"
+        tools:layout="@layout/fragment_consejos" />
+    <fragment
+        android:id="@+id/tabZwei2"
+        android:name="com.example.my_spender.ui.consejos.TabZwei"
+        android:label="fragment_tab_zwei"
+        tools:layout="@layout/fragment_tab_zwei" />
+    <fragment
+        android:id="@+id/tabEins2"
+        android:name="com.example.my_spender.ui.consejos.TabEins"
+        android:label="fragment_tab_eins"
+        tools:layout="@layout/fragment_tab_eins" />
 
 </navigation>
