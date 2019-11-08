@@ -439,6 +439,9 @@ public class SistemaDifusoAdulto extends AppCompatActivity {
             //Se crea un paquete donde se almacena el dato de croquetas
             Bundle cantidadCroquetas = new Bundle();
             cantidadCroquetas.putInt("Croquetas", cantidad);
+            cantidadCroquetas.putInt("Tamaño", sizeValue);
+            cantidadCroquetas.putInt("Peso", weightValue);
+            cantidadCroquetas.putInt("Actividad", activityValue);
             //Se envia el paquete a la siguiente fragment
             fragment.setArguments(cantidadCroquetas);
 

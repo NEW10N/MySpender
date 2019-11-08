@@ -35,7 +35,7 @@ public class SistemaDifusoCachorro extends AppCompatActivity {
     private TextView optionSizeArray[] = new TextView[4];
     private Button sctt;
     //cantidad del seek del tamaño
-    private int SizeValue;
+    private int sizeValue;
 
     //Datos para el seek del peso
     private TextView textWeight;
@@ -49,7 +49,7 @@ public class SistemaDifusoCachorro extends AppCompatActivity {
     private SeekBar skbAge;
     private String age;
     //cantidad del seek de la edad
-    private int AgeValue;
+    private int ageValue;
 
     //CONDICIONES CLAVES
     private int minWeight;
@@ -79,7 +79,7 @@ public class SistemaDifusoCachorro extends AppCompatActivity {
         size = getResources().getString(R.string.Size);
         textSize.setText(size + ": 0cm");
         textSize.setTextColor(getColor(R.color.colorRed));
-        SizeValue = 0;
+        sizeValue = 0;
 
         //El seek y las opciones del peso
         textWeight = findViewById(R.id.textWeightCachorro);
@@ -97,7 +97,7 @@ public class SistemaDifusoCachorro extends AppCompatActivity {
         age = getResources().getString(R.string.Age);
         textAge.setText(age + ": 0 meses");
         textAge.setTextColor(getColor(R.color.colorRed));
-        AgeValue = 0;
+        ageValue = 0;
 
 
         //Metodos del seek del tamaño
@@ -179,7 +179,7 @@ public class SistemaDifusoCachorro extends AppCompatActivity {
                 }else {
                     textWeight.setTextColor(getColor(R.color.colorRed));
                 }
-                SizeValue = progress;
+                sizeValue = progress;
             }
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
@@ -246,7 +246,7 @@ public class SistemaDifusoCachorro extends AppCompatActivity {
                 }else{
                     textAge.setTextColor(getColor(R.color.colorBlack));
                 }
-                AgeValue = progress;
+                ageValue = progress;
             }
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
@@ -262,14 +262,14 @@ public class SistemaDifusoCachorro extends AppCompatActivity {
     }
 
     public void ActivateFuzzySystem(View v) {
-        if(SizeValue == 0){
+        if(sizeValue == 0){
             Toast.makeText(this, "Falta información del tamaño", Toast.LENGTH_SHORT).show();
         }else if(weightValue == 0) {
             Toast.makeText(this, "Falta información del peso", Toast.LENGTH_SHORT).show();
-        } else if(AgeValue == 0) {
+        } else if(ageValue == 0) {
             Toast.makeText(this, "Falta información de la edad", Toast.LENGTH_SHORT).show();
         } else {
-            motorCachorro(SizeValue,weightValue,AgeValue);
+            motorCachorro(sizeValue,weightValue,ageValue);
         }
     }
 
@@ -433,6 +433,9 @@ public class SistemaDifusoCachorro extends AppCompatActivity {
             //Se crea un paquete donde se almacena el dato de croquetas
             Bundle cantidadCroquetas = new Bundle();
             cantidadCroquetas.putInt("Croquetas", cantidad);
+            cantidadCroquetas.putInt("Tamaño", sizeValue);
+            cantidadCroquetas.putInt("Peso", weightValue);
+            cantidadCroquetas.putInt("Edad", ageValue);
             //Se envia el paquete a la siguiente fragment
             fragment.setArguments(cantidadCroquetas);
 

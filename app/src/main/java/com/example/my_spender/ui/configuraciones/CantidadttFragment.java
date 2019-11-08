@@ -20,7 +20,7 @@ public class CantidadttFragment extends Fragment {
 
     private Button shora;
     private TextView infoCroquetas;
-    private int cantidad;
+    private int cantidad, tamaño, peso, edad, actividadFisica;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -28,6 +28,10 @@ public class CantidadttFragment extends Fragment {
 
         if(getArguments() != null){
             cantidad = getArguments().getInt("Croquetas");
+            tamaño = getArguments().getInt("Tamaño");
+            peso = getArguments().getInt("Peso");
+            edad = getArguments().getInt("Edad", 0);
+            actividadFisica = getArguments().getInt("Actividad", 0);
         }
     }
 
