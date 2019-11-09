@@ -17,6 +17,7 @@ public class HoraFragment extends Fragment {
     @Nullable
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
         View view =inflater.inflate(R.layout.fragment_confhora, container, false);
+        /*
         ctd = (Button) view.findViewById(R.id.btnscf);
 
         ctd.setOnClickListener(new View.OnClickListener() {
@@ -24,12 +25,11 @@ public class HoraFragment extends Fragment {
             public void onClick(View v) {
                 //Toast.makeText(getActivity(),"Going to Fragment")
                 HoraFragment fragment = new HoraFragment();
-                getActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.Cantidadtt, fragment)
-                        .addToBackStack(null)
-                        .commit();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.ConfHora, fragment).addToBackStack(null).commit();
             }
         });
+
+         */
         return view;
     }
 }

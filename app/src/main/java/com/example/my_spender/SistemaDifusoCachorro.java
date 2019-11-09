@@ -442,6 +442,7 @@ public class SistemaDifusoCachorro extends AppCompatActivity {
             //Se traslada el fragment
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.confCachorro, fragment);
+            transaction.addToBackStack(null);
             transaction.commit();
         }
 

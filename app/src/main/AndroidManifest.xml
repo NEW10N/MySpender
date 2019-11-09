@@ -34,10 +34,12 @@
         <activity
             android:name=".SistemaDifusoCachorro"
             android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBarV2"
             />
         <activity
             android:name=".SistemaDifusoAdulto"
             android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBarV2"
             />
     </application>
 

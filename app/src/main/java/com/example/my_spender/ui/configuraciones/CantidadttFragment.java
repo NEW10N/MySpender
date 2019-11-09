@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -35,6 +36,9 @@ public class CantidadttFragment extends Fragment {
         }
     }
 
+
+
+
     @Override
     @Nullable
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
@@ -49,13 +53,18 @@ public class CantidadttFragment extends Fragment {
             public void onClick(View v) {
                 //Toast.makeText(getActivity(),"Going to Fragment")
                 HoraFragment fragment = new HoraFragment();
-                getActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.Cantidadtt, fragment)
-                        .addToBackStack(null)
-                        .commit();
+                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+
+                transaction.replace(R.id.Cantidadtt, fragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
+                //getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.Cantidadtt, fragment).commit();
+                //getActivity().getSupportFragmentManager().beginTransaction()
             }
         });
         return view;
     }
+
+
 }
 
