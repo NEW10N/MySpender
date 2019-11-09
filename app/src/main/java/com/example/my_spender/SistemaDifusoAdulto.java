@@ -309,6 +309,8 @@ public class SistemaDifusoAdulto extends AppCompatActivity {
         } else if(activityValue == 0) {
             Toast.makeText(this, "Falta información de la actividad fisica", Toast.LENGTH_SHORT).show();
         } else {
+            Button btn = findViewById(R.id.btnscta);
+            btn.setY(-150);
             motorAdulto(sizeValue,weightValue,activityValue);
         }
     }
@@ -448,7 +450,6 @@ public class SistemaDifusoAdulto extends AppCompatActivity {
             //Se traslada el fragment
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.conAdulto, fragment);
-            transaction.addToBackStack(null);
             transaction.commit();
         }
 

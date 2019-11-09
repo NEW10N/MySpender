@@ -269,6 +269,8 @@ public class SistemaDifusoCachorro extends AppCompatActivity {
         } else if(ageValue == 0) {
             Toast.makeText(this, "Falta información de la edad", Toast.LENGTH_SHORT).show();
         } else {
+            Button btn = findViewById(R.id.btnsctc);
+            btn.setY(-150);
             motorCachorro(sizeValue,weightValue,ageValue);
         }
     }
@@ -442,7 +444,6 @@ public class SistemaDifusoCachorro extends AppCompatActivity {
             //Se traslada el fragment
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.confCachorro, fragment);
-            transaction.addToBackStack(null);
             transaction.commit();
         }
 

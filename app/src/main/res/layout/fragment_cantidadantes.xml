@@ -31,20 +31,6 @@
         app:layout_constraintTop_toBottomOf="@+id/my_toolbar"
         app:srcCompat="@drawable/feeding" />
 
-    <Button
-        android:id="@+id/btnshora"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/buttonrec"
-        android:fontFamily="sans-serif-condensed-light"
-        android:text="Siguiente"
-        android:textColor="@color/colorWhite"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textPorciontotal" />
-
     <TextView
         android:id="@+id/textcantidadtotal"
         android:layout_width="wrap_content"
@@ -72,4 +58,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textcantidadtotal" />
+
+    <Button
+        android:id="@+id/btnshora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/buttonrec"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="Siguiente"
+        android:textColor="@color/colorWhite"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textPorciontotal" />
     </androidx.constraintlayout.widget.ConstraintLayout>

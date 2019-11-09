@@ -48,15 +48,17 @@ public class CantidadttFragment extends Fragment {
 
         infoCroquetas.setText(cantidad + " gramos");
 
+
         shora.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Toast.makeText(getActivity(),"Going to Fragment")
+                shora.setY(-150);
+                Toast.makeText(getContext(), "Boton 1", Toast.LENGTH_SHORT).show();
+                //((ViewGroup)shora.getParent()).removeView(shora);
                 HoraFragment fragment = new HoraFragment();
                 FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-
                 transaction.replace(R.id.Cantidadtt, fragment);
-                transaction.addToBackStack(null);
                 transaction.commit();
                 //getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.Cantidadtt, fragment).commit();
                 //getActivity().getSupportFragmentManager().beginTransaction()
