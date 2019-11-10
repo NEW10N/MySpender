@@ -1,5 +1,7 @@
 package com.example.my_spender.ui.configuraciones;
 
+import android.content.ContentValues;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -15,6 +17,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.my_spender.AdminSQLiteOpenHelper;
 import com.example.my_spender.R;
 
 
@@ -83,7 +86,7 @@ public class datosFinalesConfFragment extends Fragment {
         }
         infoCantidadCroquetas.setText(cantidad + " gramos");
         infoCantidadDias.setText(daysNumber + " veces");
-        int porciones = cantidad/daysNumber;
+        final int porciones = cantidad/daysNumber;
         infoCantidadPorciones.setText(porciones + " gramos");
 
         //HORARIOS
@@ -119,6 +122,34 @@ public class datosFinalesConfFragment extends Fragment {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(getContext(), "administracion", null, 1);
+                SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
+
+                ContentValues registro = new ContentValues();
+
+                if(actividadFisica == 0){
+                    registro.put("tipo", true);
+                }else {
+                    registro.put("tipo", false);
+                }
+                String nombre = name.getText().toString();
+                registro.put("nombre", nombre);
+                registro.put("tamaño", tamaño);
+                registro.put("peso", peso);
+                registro.put("edad", edad);
+                registro.put("actividad", actividadFisica);
+                registro.put("cantidadC", cantidad);
+                registro.put("cantidadD", daysNumber);
+                registro.put("cantidadP", porciones);
+                registro.put("hora1", hora1);
+                registro.put("hora1am", am1);
+                registro.put("hora2", hora2);
+                registro.put("hora2am", am2);
+                registro.put("hora3", hora3);
+                BaseDeDatos.insert("mascota", null, registro);
+                BaseDeDatos.close();
+
                 EditarConfiguracionFragment fragment = new EditarConfiguracionFragment();
                 FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.DatosFinalesConfg, fragment);
