@@ -137,16 +137,77 @@ public class datosFinalesConfFragment extends Fragment {
                 registro.put("nombre", nombre);
                 registro.put("tamaño", tamaño);
                 registro.put("peso", peso);
-                registro.put("edad", edad);
-                registro.put("actividad", actividadFisica);
-                registro.put("cantidadC", cantidad);
+
+                //enviar atributo
+                if(edad!=0){
+                    registro.put("atributo", edad);
+                }else{
+                    registro.put("atributo", actividadFisica);
+                }
+                registro.put("atributo", edad);
                 registro.put("cantidadD", daysNumber);
                 registro.put("cantidadP", porciones);
-                registro.put("hora1", hora1);
-                registro.put("hora1am", am1);
-                registro.put("hora2", hora2);
-                registro.put("hora2am", am2);
-                registro.put("hora3", hora3);
+
+                //Enviar horas transformado a 24horas
+                if(hora2 == 0){
+                    if(am1){
+                        registro.put("hora1", hora1);
+                    }else{
+                        if(hora1 == 12){
+                            registro.put("hora1", hora1);
+                        }else{
+                            hora1 = hora1 + 12;
+                            registro.put("hora1",hora1);
+                        }
+                    }
+                }else if(hora3 == 0) {
+                    //Si existe hora 2
+                    if (am1) {
+                        registro.put("hora1", hora1);
+                    } else {
+                        if (hora1 == 12) {
+                            registro.put("hora1", hora1);
+                        } else {
+                            hora1 = hora1 + 12;
+                            registro.put("hora1", hora1);
+                        }
+                    }
+                    //
+                    if (am2) {
+                        registro.put("hora2", hora2);
+                    } else {
+                        if (hora2 == 12) {
+                            registro.put("hora2", hora2);
+                        } else {
+                            hora1 = hora1 + 12;
+                            registro.put("hora2", hora2);
+                        }
+                    }
+                }else {
+                    if (am1) {
+                        registro.put("hora1", hora1);
+                    } else {
+                        if (hora1 == 12) {
+                            registro.put("hora1", hora1);
+                        } else {
+                            hora1 = hora1 + 12;
+                            registro.put("hora1", hora1);
+                        }
+                    }
+                    //
+                    if (am2) {
+                        registro.put("hora2", hora2);
+                    } else {
+                        if (hora2 == 12) {
+                            registro.put("hora2", hora2);
+                        } else {
+                            hora1 = hora1 + 12;
+                            registro.put("hora2", hora2);
+                        }
+                    }
+                    hora3 = hora3 + 12;
+                    registro.put("hora3", hora3);
+                }
                 BaseDeDatos.insert("mascota", null, registro);
                 BaseDeDatos.close();
 

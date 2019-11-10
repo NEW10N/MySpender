@@ -12,7 +12,7 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper{
 
     @Override
     public void onCreate(SQLiteDatabase BaseDeDatos) {
-        BaseDeDatos.execSQL("create table mascota(llave int primary key, tipo boolean, nombre text, tamaño int, peso int, edad int, actividad text, cantidadC int, cantidadD int, cantidadP int, hora1 int, hora1am boolean, hora2 int, hora2am boolean, hora3 int)");
+        BaseDeDatos.execSQL("create table mascota(llave int primary key, tipo boolean, nombre text, tamaño int, peso int, atributo int, cantidadV int, cantidadP int, hora1 int, hora2 int, hora3 int)");
 
     }
 
