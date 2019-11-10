@@ -11,17 +11,15 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.navigation.Navigation;
 
 import com.example.my_spender.R;
 
-public class CantidadttFragment extends Fragment {
+public class CantidadDespuesFragment extends Fragment {
 
-    private Button shora;
-    private TextView infoCroquetas;
-    private int cantidad, tamaño, peso, edad, actividadFisica;
+    private Button btn;
+    private TextView infoCroquetas, infoCantidadDias;
+    private int cantidad, tamaño, peso, edad, actividadFisica, daysNumber, hora1, hora2, hora3;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -33,6 +31,10 @@ public class CantidadttFragment extends Fragment {
             peso = getArguments().getInt("Peso");
             edad = getArguments().getInt("Edad", 0);
             actividadFisica = getArguments().getInt("Actividad", 0);
+            daysNumber = getArguments().getInt("Dias");
+            hora1 = getArguments().getInt("Hora1");
+            hora2 = getArguments().getInt("Hora2", 0);
+            hora3 = getArguments().getInt("Hora3", 0);
         }
     }
 
@@ -42,40 +44,49 @@ public class CantidadttFragment extends Fragment {
     @Override
     @Nullable
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
-        View view =inflater.inflate(R.layout.fragment_cantidadantes, container, false);
-        shora = (Button) view.findViewById(R.id.btnshora);
-        infoCroquetas = view.findViewById(R.id.textPorciontotal);
+        View view = inflater.inflate(R.layout.fragment_cantidaddespues, container, false);
+        return view;
+    }
 
-        infoCroquetas.setText(cantidad + " gramos");
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        btn = (Button) view.findViewById(R.id.buttonComenzarCantidad);
+        infoCroquetas = view.findViewById(R.id.textPorcionkg);
+        infoCantidadDias = view.findViewById(R.id.textcanveces);
+
+        int porciones = cantidad/daysNumber;
+
+        infoCroquetas.setText(porciones + " gramos");
+        infoCantidadDias.setText(daysNumber + "");
 
 
-        shora.setOnClickListener(new View.OnClickListener() {
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Toast.makeText(getActivity(),"Going to Fragment")
-                shora.setY(-150);
+                btn.setY(-150);
                 Toast.makeText(getContext(), "Boton 1", Toast.LENGTH_SHORT).show();
                 //((ViewGroup)shora.getParent()).removeView(shora);
                 HoraFragment fragment = new HoraFragment();
 
                 //Se crea un paquete donde se almacena el dato de croquetas
-                Bundle info = new Bundle();
-                info.putInt("Croquetas", cantidad);
-                info.putInt("Tamaño", tamaño);
-                info.putInt("Peso", peso);
-                info.putInt("Actividad", actividadFisica);
-
+                Bundle cantidadCroquetas = new Bundle();
+                cantidadCroquetas.putInt("Croquetas", cantidad);
+                cantidadCroquetas.putInt("Tamaño", tamaño);
+                cantidadCroquetas.putInt("Peso", peso);
+                cantidadCroquetas.putInt("Actividad", actividadFisica);
                 //Se envia el paquete a la siguiente fragment
-                fragment.setArguments(info);
+                fragment.setArguments(cantidadCroquetas);
 
                 FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.Cantidadtt, fragment);
+                transaction.replace(R.id.CantidadAntes, fragment);
+                transaction.addToBackStack(null);
                 transaction.commit();
                 //getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.Cantidadtt, fragment).commit();
                 //getActivity().getSupportFragmentManager().beginTransaction()
             }
         });
-        return view;
     }
 
 

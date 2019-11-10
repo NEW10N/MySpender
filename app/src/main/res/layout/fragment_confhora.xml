@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/ConfHora"
-    android:background="@color/colorWhite">
+    android:background="@color/colorWhite"
+    android:id="@+id/ConfHora">
 
     <TextView
         android:id="@+id/my_toolbar"
@@ -30,23 +30,13 @@
         app:layout_constraintTop_toBottomOf="@+id/my_toolbar"
         app:srcCompat="@drawable/feeding" />
 
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="406dp"
-        android:layout_height="242dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="2dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonComenzar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imagenPerro"
-        app:layout_constraintVertical_bias="0.116">
 
         <LinearLayout
+            android:id="@+id/infoDays"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/imagenPerro">
 
             <TextView
                 android:id="@+id/textQuestion"
@@ -76,6 +66,7 @@
                     android:textSize="20dp" />
 
                 <TextView
+                    android:id="@+id/daysNumber"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0"
@@ -111,6 +102,7 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
+                <!--
                 <Button
                     android:id="@+id/btnselectime"
                     android:layout_width="match_parent"
@@ -119,9 +111,17 @@
                     android:background="@drawable/buttonrec"
                     android:text="Seleccione la hora"
                     app:fontFamily="sans-serif-condensed-light"/>
+                    -->
+                <Spinner
+                    android:id="@+id/spinnerHoras"
+                    android:layout_width="210dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    app:fontFamily="sans-serif-condensed-light"/>
             </LinearLayout>
         </LinearLayout>
-    </ScrollView>
 
     <Button
         android:id="@+id/btnscf"
@@ -133,9 +133,10 @@
         android:text="Siguiente"
         android:textColor="@color/colorWhite"
         android:textSize="20dp"
+        android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+        app:layout_constraintTop_toBottomOf="@+id/infoDays" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

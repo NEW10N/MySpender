@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:id="@+id/CantidadAntes">
 
     <TextView
         android:id="@+id/my_toolbar"
@@ -21,7 +23,7 @@
     <ImageView
         android:id="@+id/imagenPerro"
         android:layout_width="wrap_content"
-        android:layout_height="250dp"
+        android:layout_height="230dp"
         android:layout_marginTop="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,7 +38,7 @@
         android:text="La cantidad en porciones que se le dara a la mascota es de"
         android:textAlignment="center"
         android:textColor="@color/colorGray"
-        android:textSize="25dp"
+        android:textSize="20dp"
         app:fontFamily="sans-serif-light"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imagenPerro"
@@ -49,7 +51,7 @@
         android:layout_marginTop="20dp"
         android:text="0 kg"
         android:textColor="@color/colorBlack"
-        android:textSize="25dp"
+        android:textSize="20dp"
         app:fontFamily="sans-serif-light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -63,7 +65,7 @@
         android:text="Veces al día"
         android:textAlignment="center"
         android:textColor="@color/colorGray"
-        android:textSize="25dp"
+        android:textSize="20dp"
         app:fontFamily="sans-serif-light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -73,17 +75,17 @@
         android:id="@+id/textcanveces"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:text="0 "
         android:textColor="@color/colorBlack"
-        android:textSize="25dp"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
         app:fontFamily="sans-serif-light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textveces" />
 
     <Button
-        android:id="@+id/buttonComenzar"
+        android:id="@+id/buttonComenzarCantidad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/buttonrec"
@@ -91,8 +93,10 @@
         android:text="Siguiente"
         android:textColor="@color/colorWhite"
         android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintTop_toBottomOf="@+id/textcanveces"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textcanveces" />
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

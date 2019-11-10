@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorWhite"
-    android:id="@+id/Cantidadtt"
-    >
+    android:id="@+id/Cantidadtt">
 
     <TextView
         android:id="@+id/my_toolbar"
