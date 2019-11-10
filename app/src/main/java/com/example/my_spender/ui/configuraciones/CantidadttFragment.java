@@ -54,7 +54,6 @@ public class CantidadttFragment extends Fragment {
             public void onClick(View v) {
                 //Toast.makeText(getActivity(),"Going to Fragment")
                 shora.setY(-150);
-                Toast.makeText(getContext(), "Boton 1", Toast.LENGTH_SHORT).show();
                 //((ViewGroup)shora.getParent()).removeView(shora);
                 HoraFragment fragment = new HoraFragment();
 
@@ -63,6 +62,7 @@ public class CantidadttFragment extends Fragment {
                 info.putInt("Croquetas", cantidad);
                 info.putInt("Tamaño", tamaño);
                 info.putInt("Peso", peso);
+                info.putInt("Edad", edad);
                 info.putInt("Actividad", actividadFisica);
 
                 //Se envia el paquete a la siguiente fragment

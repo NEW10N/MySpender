@@ -20,6 +20,7 @@ public class CantidadDespuesFragment extends Fragment {
     private Button btn;
     private TextView infoCroquetas, infoCantidadDias;
     private int cantidad, tamaño, peso, edad, actividadFisica, daysNumber, hora1, hora2, hora3;
+    private boolean am1, am2;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -35,6 +36,9 @@ public class CantidadDespuesFragment extends Fragment {
             hora1 = getArguments().getInt("Hora1");
             hora2 = getArguments().getInt("Hora2", 0);
             hora3 = getArguments().getInt("Hora3", 0);
+            am1 = getArguments().getBoolean("Am1");
+            am2 = getArguments().getBoolean("Am2", true);
+
         }
     }
 
@@ -66,22 +70,27 @@ public class CantidadDespuesFragment extends Fragment {
             public void onClick(View v) {
                 //Toast.makeText(getActivity(),"Going to Fragment")
                 btn.setY(-150);
-                Toast.makeText(getContext(), "Boton 1", Toast.LENGTH_SHORT).show();
                 //((ViewGroup)shora.getParent()).removeView(shora);
-                HoraFragment fragment = new HoraFragment();
+                datosFinalesConfActivity fragment = new datosFinalesConfActivity();
 
                 //Se crea un paquete donde se almacena el dato de croquetas
-                Bundle cantidadCroquetas = new Bundle();
-                cantidadCroquetas.putInt("Croquetas", cantidad);
-                cantidadCroquetas.putInt("Tamaño", tamaño);
-                cantidadCroquetas.putInt("Peso", peso);
-                cantidadCroquetas.putInt("Actividad", actividadFisica);
+                Bundle info = new Bundle();
+                info.putInt("Croquetas", cantidad);
+                info.putInt("Tamaño", tamaño);
+                info.putInt("Peso", peso);
+                info.putInt("Edad", edad);
+                info.putInt("Actividad", actividadFisica);
+                info.putInt("Dias", daysNumber);
+                info.putInt("Hora1", hora1);
+                info.putInt("Hora2", hora2);
+                info.putInt("Hora3", hora3);
+                info.putBoolean("Am1", am1);
+                info.putBoolean("Am2", am2);
                 //Se envia el paquete a la siguiente fragment
-                fragment.setArguments(cantidadCroquetas);
+                fragment.setArguments(info);
 
                 FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.CantidadAntes, fragment);
-                transaction.addToBackStack(null);
                 transaction.commit();
                 //getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.Cantidadtt, fragment).commit();
                 //getActivity().getSupportFragmentManager().beginTransaction()

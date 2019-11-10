@@ -24,6 +24,7 @@ public class HoraFragment extends Fragment {
     private TextView days;
     private Spinner spinner;
     private ArrayAdapter <String> adapter;
+    private boolean amPm1, amPm2;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -53,6 +54,8 @@ public class HoraFragment extends Fragment {
         auxNumber = 1;
         days.setText(auxNumber + "");
         spinner = view.findViewById(R.id.spinnerHoras);
+        amPm1 = true;
+        amPm2 = true;
 
         final String [] OptionDays1 = {"Escoja un horario", "7am", "8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm", "8pm", "9pm", "10pm", "11pm", "12am"};
         final String [] OptionDays2 = {"Escoja un horario", "7am - 3pm", "8am - 4pm", "9am - 5pm", "10am - 6pm", "11am - 7pm", "12pm - 8pm", "1pm - 9pm", "2pm - 10pm", "3pm - 11pm", "4pm - 12am"};
@@ -98,18 +101,31 @@ public class HoraFragment extends Fragment {
                     case 1:
                         hora = spinner.getSelectedItemPosition();
                         if(hora <= 6 && hora != 0){
+                            if (hora == 6){
+                                amPm1 = false;
+                            }else{
+                                amPm1 = true;
+                            }
                             hora += 6;
                         }else if(hora != 0){
                             hora -= 6;
+                            amPm1 = false;
                         }
                         break;
                     case 2:
                         hora = spinner.getSelectedItemPosition();
                         hora2 = hora + 2;
+                        amPm2 = false;
                         if(hora <= 6 && hora != 0){
+                            if (hora == 6){
+                                amPm1 = false;
+                            }else{
+                                amPm1 = true;
+                            }
                             hora += 6;
                         }else if (hora != 0) {
                             hora -= 6;
+                            amPm1 = false;
                         }
 
                         break;
@@ -117,14 +133,28 @@ public class HoraFragment extends Fragment {
                         hora = spinner.getSelectedItemPosition();
                         hora3 = hora + 2;
                         if(hora < 3 && hora != 0){
+                            if (hora == 2){
+                                amPm2 = false;
+                            }else{
+                                amPm2 = true;
+                            }
                             hora += 6;
+                            amPm1 = true;
                             hora2 = hora + 4;
                         }else if(hora < 7 && hora != 0){
+                            if (hora == 6){
+                                amPm1 = false;
+                            }else{
+                                amPm1 = true;
+                            }
                             hora2 = hora - 2;
+                            amPm2 = false;
                             hora += 6;
                         }else if(hora != 0){
                             hora2 = hora - 2;
+                            amPm2 = false;
                             hora -= 6;
+                            amPm1 = false;
                         }
                         break;
                 }
@@ -139,11 +169,14 @@ public class HoraFragment extends Fragment {
                     info.putInt("Croquetas", cantidad);
                     info.putInt("Tamaño", tamaño);
                     info.putInt("Peso", peso);
+                    info.putInt("Edad", edad);
                     info.putInt("Actividad", actividadFisica);
                     info.putInt("Dias", auxNumber);
                     info.putInt("Hora1", hora);
                     info.putInt("Hora2", hora2);
                     info.putInt("Hora3", hora3);
+                    info.putBoolean("Am1", amPm1);
+                    info.putBoolean("Am2", amPm2);
 
                     //Se envia el paquete a la siguiente fragment
                     fragment.setArguments(info);

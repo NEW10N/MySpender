@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:id="@+id/DatosFinalesConfg">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+            android:id="@+id/adulto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/my_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Datos finales"
+                android:textAlignment="center"
+                android:textColor="@color/colorWhite"
+                android:background="@color/colorPrimary"
+                android:textSize="35dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/questionName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="20dp"
+                android:text="¿Cual es el nombre de tu mascota?"
+                android:textColor="@color/colorBlack"
+                android:textSize="20dp"
+                app:fontFamily="sans-serif-light" />
+
+            <EditText
+                android:id="@+id/editTextName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Nombre" />
+
+            <LinearLayout
+                android:layout_width="380dp"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimaryDark"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"/>
+
+            <TextView
+                android:id="@+id/textSizeInfomation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Tamaño:  50 cm"
+                android:textColor="@color/colorBlack"
+                android:textSize="20dp"
+                android:layout_gravity="center"
+                app:fontFamily="sans-serif-light" />
+
+            <TextView
+                android:id="@+id/textWeightInfomation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Peso ideal:  30 kg"
+                android:textColor="@color/colorBlack"
+                android:textSize="20dp"
+                android:layout_gravity="center"
+                app:fontFamily="sans-serif-light" />
+
+            <TextView
+                android:id="@+id/textAdditionalInfomation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Edad:  5 meses"
+                android:textColor="@color/colorBlack"
+                android:textSize="20dp"
+                android:layout_gravity="center"
+                app:fontFamily="sans-serif-light" />
+
+            <LinearLayout
+                android:layout_width="380dp"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimaryDark"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:text="Cantidad de croquetas al dia"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="20dp"
+                    app:fontFamily="sans-serif-light" />
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="15dp"
+                    android:text="="
+                    android:textColor="@color/colorBlack"
+                    android:textSize="40dp"
+                    app:fontFamily="sans-serif-light" />
+
+                <TextView
+                    android:id="@+id/datoCantidadFinal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="15dp"
+                    android:text="196 gramos"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="25dp"
+                    app:fontFamily="sans-serif-light" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:text="Cantidad de porciones por dia"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="18dp"
+                    app:fontFamily="sans-serif-light" />
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="15dp"
+                    android:text="="
+                    android:textColor="@color/colorBlack"
+                    android:textSize="40dp"
+                    app:fontFamily="sans-serif-light" />
+
+                <TextView
+                    android:id="@+id/datoDiasFinal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="15dp"
+                    android:text="2 veces"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="25dp"
+                    app:fontFamily="sans-serif-light" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:text="Cantidad de porciones"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="20dp"
+                    app:fontFamily="sans-serif-light" />
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="15dp"
+                    android:text="="
+                    android:textColor="@color/colorBlack"
+                    android:textSize="40dp"
+                    app:fontFamily="sans-serif-light" />
+
+                <TextView
+                    android:id="@+id/datoPorcionesFinal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="15dp"
+                    android:text="98 gramos"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="25dp"
+                    app:fontFamily="sans-serif-light" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="380dp"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimaryDark"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Horarios"
+                android:textColor="@color/colorBlack"
+                android:textSize="20dp"
+                android:layout_gravity="center"
+                app:fontFamily="sans-serif-light" />
+
+            <TextView
+                android:id="@+id/horarios"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="7am - 9am - 1pm"
+                android:textColor="@color/colorBlack"
+                android:textSize="20dp"
+                android:layout_gravity="center"
+                app:fontFamily="sans-serif-light" />
+
+            <Button
+                android:id="@+id/btnConfirmar"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:background="@drawable/buttonrec"
+                android:fontFamily="sans-serif-condensed-light"
+                android:onClick="ActivateFuzzySystem"
+                android:text="CONFIRMAR"
+                android:textColor="@color/colorWhite"
+                android:textSize="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
