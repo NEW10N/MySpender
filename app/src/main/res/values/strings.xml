@@ -16,8 +16,77 @@
     <string name="Weight">Peso</string>
     <string name="Age">Edad</string>
     <string name="PhysicalActivity">Actividad Fisica</string>
+    <string name="tab_text_1">Cachorro</string>
+    <string name="tab_text_2">Adulto</string>
+    <string name="p1">
+        Para mantenerse sano, tu perro necesita el equilibrio adecuado de proteínas, grasas, hidratos de carbono,
+        vitaminas y minerales. Cada nutriente tiene que estar en equilibrio con el contenido energético de la dieta y con todos los demás nutrientes.
+        El número adecuado de calorías depende del tamaño de tu perro, de su raza y de la cantidad de ejercicio que haga.\n
+        La etapa vital en la que se encuentre puede suponer también una gran diferencia:
+        los cachorros, los perros adultos, los perros mayores y las perras gestantes o en período de lactancia necesitan todos ellos cantidades
+        distintas de energía.
+    </string>
+    <string name="p2">
+        La preparación en casa de una dieta equilibrada para tu perro exige mucho tiempo, esfuerzo y conocimiento. Es difícil hacer bien las cosas y eso podría afectar a la salud de tu perro.\n
+        Se han dedicado décadas de investigación y conocimientos especializados para desarrollar las distintas marcas de alimentos para perros que ahora puedes encontrar en las tiendas. \n
+        Como son:\n
+        Dog chow, pedigree y pro plan (aunque existen mas marcas están son las mas recomendadas)
+    </string>
+    <string name="p3">
+        Los cachorros necesitan comer siempre a las mismas horas. Si no quieres tener problemas con su horario de comidas, sigue los consejos que te damos a continuación.\n
+        Los perros pequeños comen menos cantidad de alimentos que los perros adultos, pero con más frecuencia. \n
+        Dale de comer a tu cachorro el mismo número de veces cada día, como te indicamos a continuación:\n
+        Cachorros pequeños: de 4 a 5 comidas pequeñas al día hasta las 10 semanas de edad.\n
+        Entre las 10 semanas y los 5 meses: 3 comidas al día.\n
+        A partir del quinto o sexto mes: 2 comidas al día.\n
+        El reloj interno del estómago de tu cachorro empezará a activar la segregación de jugos digestivos a su hora habitual de cenar, con independencia de que tú le pongas o no su comida.
+        Salvo que sigas una rutina, no tendrán hambre cuando les pongas la comida. Y si esperas demasiado tiempo, tu cachorro puede tener problemas digestivos.\n
+        Utiliza comederos y bebederos de acero inoxidable o de cerámica y con más peso en el fondo.
+        Si son de plástico, es probable que terminen convertidos en juguetes mordedores y las marcas de los dientes pueden convertirse en un nido de bacterias.
+        Si pesan más, será difícil que tú (o tu cachorro) los volquéis por accidente.\n
+        Si tu cachorro tiene las orejas largas de manera que pueden sumergirse en el pienso y el agua, existen unos boles especialmente estrechos para mantener sus orejas limpias y secas.\n
+        Asegúrate de que nada moleste a tu cachorro mientras está comiendo o se acostumbrará a comer demasiado deprisa o a repartir la comida por toda la casa.\n
+        Déjale hasta 30 minutos para que coma. Al cabo de este tiempo, retira lo que no se haya comido y ponle alimentos nuevos para la próxima comida.
+        El cachorro debe tener en todo momento agua fresca a su disposición.\n
+        Después de comer, tu cachorro necesita un lugar tranquilo y silencioso o una siesta para ayudarle a digerir bien sus alimentos.\n
+        ¡Así que programa los paseos para antes, no para después, de la hora de sus comidas!
+    </string>
+    <string name="p4">
+        Las vitaminas adecuadas ayudan al organismo de tu perro a crecer y a repararse a sí mismo.
+        Ahora bien, un exceso de ciertas vitaminas puede ser perjudicial para su salud.\n
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+        Las vitaminas ayudan al organismo de tu perro a procesar otros nutrientes y sin el equilibrio adecuado de vitaminas,
+        su cuerpo no podrá crecer ni repararse a sí mismo de forma adecuada. La forma más fácil de conseguir el equilibrio adecuado de
+        vitaminas en la dieta de tu perro es darle un alimento equilibrado para perros como los que te ofrece Pedigree.\n
+
+        Tu perro necesita vitaminas de dos grupos distintos: vitamina C y complejo de vitaminas B del grupo hidrosoluble,
+        y vitaminas A, D, E y K del grupo liposoluble.\n\n
+    </string>
+    <string name="p5">
+        <b>Vitaminas C y complejo de vitaminas B del grupo hidrosoluble</b>\n\n
+        Estas vitaminas ayudan al cuerpo de tu perro a formar huesos, dientes y tejidos conectivos.
+        Se disuelven en agua, por lo que son eliminadas continuamente del cuerpo y tienen que ser repuestas periódicamente.
+        No obstante, mientras que las distintas formas de vitamina B tienen que obtenerse de la dieta de tu perro, la vitamina C es
+        producida de forma natural por sus cuerpos.\n
+
+        La adición de suplementos de vitamina C a la dieta de tu perro puede causarle problemas serios de salud,
+        así que salvo por indicación de un veterinario, no debes darle este tipo de suplementos.\n\n
+    </string>
+    <string name="p6">  Vitaminas A, D, E y K del grupo liposoluble\n\n
+
+        Estas vitaminas se encuentran en la grasa animal. El cuerpo de tu perro las absorbe a través del intestino y las almacena para su uso en el futuro.
+        La acumulación de una cantidad excesiva de cualquiera de estas vitaminas puede causar anomalías físicas, especialmente en el esqueleto.
+        \n
+        Por eso no es una buena idea darle a tu perro suplementos salvo que tu veterinario se lo prescriba por presentar algún problema de salud.\n
+
+        A continuación te indicamos lo que hace cada una de esas vitaminas.\n
+
+        La vitamina A es buena para la vista, entre otras cosas.\n
+        La vitamina D ayuda al cuerpo a absorber calcio para la formación de los huesos.\n
+        La vitamina E ayuda al cuerpo a fabricar glóbulos rojos.\n
+        La vitamina K ayuda a que la sangre se coagule y forme costras protectoras.\n
+        Sea cual sea tu decisión sobre la forma de alimentar a tu perro, recuerda que depende totalmente de ti para recibir
+                un equilibrio adecuado de vitaminas en su dieta.
+    </string>
 
 </resources>
