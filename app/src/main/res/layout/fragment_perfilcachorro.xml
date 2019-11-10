@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:overScrollMode="ifContentScrolls">
+
+    <ImageView
+        android:id="@+id/imagenperfil"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/puppyperfil" />
+
+    <LinearLayout
+        android:id="@+id/datoscachorro"
+        android:layout_width="match_parent"
+        android:layout_height="145dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagenperfil">
+
+        <TextView
+            android:id="@+id/textNameInformation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:text="Nombre"
+            android:textColor="@color/colorBlack"
+            android:textSize="25dp"
+            app:fontFamily="sans-serif-light" />
+
+        <TextView
+            android:id="@+id/textSizeInfomation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:text="Tamaño:  50 cm"
+            android:textColor="@color/colorBlack"
+            android:textSize="20dp"
+            app:fontFamily="sans-serif-light" />
+
+        <TextView
+            android:id="@+id/textWeightInfomation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Peso ideal:  30 kg"
+            android:textColor="@color/colorBlack"
+            android:textSize="20dp"
+            app:fontFamily="sans-serif-light" />
+
+        <TextView
+            android:id="@+id/textAdditionalInfomation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Edad:  5 meses"
+            android:textColor="@color/colorBlack"
+            android:textSize="20dp"
+            app:fontFamily="sans-serif-light" />
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="1dp"
+            android:background="@color/colorPrimaryDark" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="Horarios"
+            android:textColor="@color/colorBlack"
+            android:textSize="20dp"
+            app:fontFamily="sans-serif-light" />
+
+        <TextView
+            android:id="@+id/horarios"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="7am - 9am - 1pm"
+            android:textColor="@color/colorBlack"
+            android:textSize="20dp"
+            app:fontFamily="sans-serif-light" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="482dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="9dp"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagenperfil" />
+
+    <LinearLayout
+        android:id="@+id/conComida"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_marginTop="1dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/datoscachorro">
+
+        <ImageView
+            android:id="@+id/food"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/food" />
+
+        <LinearLayout
+            android:id="@+id/contenedorComida"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/contComida"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="20dp"
+                android:text="Contenedor de Comida"
+                android:textColor="@color/colorBlack"
+                android:textSize="20dp"
+                app:fontFamily="sans-serif-light" />
+
+            <TextView
+                android:id="@+id/valorcontComida"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="20dp"
+                android:text="El contedor se encuentra lleno o no."
+                android:textColor="@color/colorBlack"
+                android:textSize="20dp"
+                app:fontFamily="sans-serif" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/conAgua"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_marginTop="1dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/conComida">
+
+        <ImageView
+            android:id="@+id/water"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/water" />
+
+        <LinearLayout
+            android:id="@+id/contenedorAgua"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/contAgua"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="20dp"
+                android:text="Contenedor de Agua"
+                android:textColor="@color/colorBlack"
+                android:textSize="20dp"
+                app:fontFamily="sans-serif-light" />
+
+            <TextView
+                android:id="@+id/valorcontAgua"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="20dp"
+                android:text="El contedor se encuentra lleno o no."
+                android:textColor="@color/colorBlack"
+                android:textSize="20dp"
+                app:fontFamily="sans-serif" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

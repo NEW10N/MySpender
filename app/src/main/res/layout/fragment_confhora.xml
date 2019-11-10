@@ -22,16 +22,25 @@
 
     <ImageView
         android:id="@+id/imagenPerro"
-        android:layout_width="wrap_content"
-        android:layout_height="250dp"
-        android:layout_marginTop="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="121dp"
+        android:layout_height="169dp"
+        android:layout_marginStart="64dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/my_toolbar"
-        app:srcCompat="@drawable/feeding" />
+        app:srcCompat="@drawable/hora" />
 
+    <ImageView
+        android:id="@+id/food"
+        android:layout_width="150dp"
+        android:layout_height="153dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imagenPerro"
+        app:layout_constraintTop_toBottomOf="@+id/my_toolbar"
+        app:srcCompat="@drawable/comida" />
 
-        <LinearLayout
+    <LinearLayout
             android:id="@+id/infoDays"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -97,12 +106,12 @@
                 app:fontFamily="sans-serif-light"
                 tools:ignore="RtlCompat" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="107dp"
+            android:orientation="vertical">
 
-                <!--
+            <!--
                 <Button
                     android:id="@+id/btnselectime"
                     android:layout_width="match_parent"
@@ -112,15 +121,15 @@
                     android:text="Seleccione la hora"
                     app:fontFamily="sans-serif-condensed-light"/>
                     -->
-                <Spinner
-                    android:id="@+id/spinnerHoras"
-                    android:layout_width="210dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:layout_gravity="center"
-                    android:textAlignment="center"
-                    app:fontFamily="sans-serif-condensed-light"/>
-            </LinearLayout>
+            <Spinner
+                android:id="@+id/spinnerHoras"
+                android:layout_width="210dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:textAlignment="center"
+                app:fontFamily="sans-serif-condensed-light" />
+        </LinearLayout>
         </LinearLayout>
 
     <Button

@@ -32,6 +32,7 @@
                 android:textColor="@color/colorWhite"
                 android:background="@color/colorPrimary"
                 android:textSize="35dp"
+                app:fontFamily="sans-serif-light"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -54,6 +55,7 @@
                 android:layout_marginStart="32dp"
                 android:ems="10"
                 android:inputType="textPersonName"
+                app:fontFamily="sans-serif"
                 android:text="Nombre" />
 
             <LinearLayout

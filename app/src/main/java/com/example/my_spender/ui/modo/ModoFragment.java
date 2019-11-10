@@ -16,20 +16,10 @@ import com.example.my_spender.R;
 
 public class ModoFragment extends Fragment {
 
-    private ModoViewModel shareViewModel;
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        shareViewModel =
-                ViewModelProviders.of(this).get(ModoViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_modo, container, false);
-        final TextView textView = root.findViewById(R.id.text_modo_uso);
-        shareViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+        View root = inflater.inflate(R.layout.fragment_configuraciones, container, false);
+
         return root;
     }
 }

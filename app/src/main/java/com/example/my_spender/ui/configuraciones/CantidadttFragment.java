@@ -71,8 +71,6 @@ public class CantidadttFragment extends Fragment {
                 FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.Cantidadtt, fragment);
                 transaction.commit();
-                //getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.Cantidadtt, fragment).commit();
-                //getActivity().getSupportFragmentManager().beginTransaction()
             }
         });
         return view;
