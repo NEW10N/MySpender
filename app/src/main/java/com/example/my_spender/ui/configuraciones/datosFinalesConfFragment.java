@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,7 +18,7 @@ import android.widget.Toast;
 import com.example.my_spender.R;
 
 
-public class datosFinalesConfActivity extends Fragment {
+public class datosFinalesConfFragment extends Fragment {
 
     private Button btn;
     private TextView infoTamaño, infoPesoIdeal, infoAdditional, infoCantidadCroquetas, infoCantidadDias, infoCantidadPorciones,horarios;
@@ -118,8 +119,11 @@ public class datosFinalesConfActivity extends Fragment {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String nameDog = name.getText().toString();
-                Toast.makeText(getContext(), nameDog, Toast.LENGTH_SHORT).show();
+                EditarConfiguracionFragment fragment = new EditarConfiguracionFragment();
+                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.DatosFinalesConfg, fragment);
+                transaction.commit();
+                btn.setVisibility(View.GONE);
             }
         });
     }

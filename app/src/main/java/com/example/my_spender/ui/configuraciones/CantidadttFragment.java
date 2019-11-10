@@ -71,6 +71,7 @@ public class CantidadttFragment extends Fragment {
                 FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.Cantidadtt, fragment);
                 transaction.commit();
+                shora.setVisibility(View.GONE);
             }
         });
         return view;

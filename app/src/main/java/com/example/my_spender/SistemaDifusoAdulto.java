@@ -452,6 +452,5 @@ public class SistemaDifusoAdulto extends AppCompatActivity {
             transaction.replace(R.id.conAdulto, fragment);
             transaction.commit();
         }
-
     }
 }

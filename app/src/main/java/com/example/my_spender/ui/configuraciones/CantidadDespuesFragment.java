@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -71,7 +70,7 @@ public class CantidadDespuesFragment extends Fragment {
                 //Toast.makeText(getActivity(),"Going to Fragment")
                 btn.setY(-150);
                 //((ViewGroup)shora.getParent()).removeView(shora);
-                datosFinalesConfActivity fragment = new datosFinalesConfActivity();
+                datosFinalesConfFragment fragment = new datosFinalesConfFragment();
 
                 //Se crea un paquete donde se almacena el dato de croquetas
                 Bundle info = new Bundle();
@@ -94,6 +93,7 @@ public class CantidadDespuesFragment extends Fragment {
                 transaction.commit();
                 //getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.Cantidadtt, fragment).commit();
                 //getActivity().getSupportFragmentManager().beginTransaction()
+                btn.setVisibility(View.GONE);
             }
         });
     }

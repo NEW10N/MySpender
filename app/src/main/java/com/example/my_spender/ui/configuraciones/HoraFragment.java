@@ -191,6 +191,7 @@ public class HoraFragment extends Fragment {
                 }else{
                     Toast.makeText(getContext(), "Escoja alguna hora", Toast.LENGTH_SHORT).show();
                 }
+                ctd.setVisibility(View.GONE);
                 //HoraFragment fragment = new HoraFragment();
                 //getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.ConfHora, fragment).addToBackStack(null).commit();
             }
@@ -215,5 +216,4 @@ public class HoraFragment extends Fragment {
                 break;
         }
     }
-
 }
