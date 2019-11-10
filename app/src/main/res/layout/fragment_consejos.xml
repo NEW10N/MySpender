@@ -8,16 +8,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
+        android:id="@+id/appbconsejos"
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabs"
+            android:id="@+id/tabconsejos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?attr/colorPrimary" >
 
             <com.google.android.material.tabs.TabItem
-                android:id="@+id/tabEins"
+                android:id="@+id/consejosCahorroFragment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:icon="@drawable/dogw"
@@ -35,7 +36,7 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.viewpager.widget.ViewPager
-        android:id="@+id/view_pager"
+        android:id="@+id/view_pagercons"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />

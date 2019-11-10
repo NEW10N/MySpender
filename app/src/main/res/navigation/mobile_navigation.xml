@@ -58,13 +58,13 @@
         tools:layout="@layout/fragment_consejos" />
     <fragment
         android:id="@+id/tabZwei2"
-        android:name="com.example.my_spender.ui.consejos.TabZwei"
+        android:name="com.example.my_spender.ui.consejos.ConsejosAdultoFragment"
         android:label="fragment_tab_zwei"
-        tools:layout="@layout/fragment_tab_zwei" />
+        tools:layout="@layout/fragment_consejoadulto" />
     <fragment
         android:id="@+id/tabEins2"
-        android:name="com.example.my_spender.ui.consejos.TabEins"
+        android:name="com.example.my_spender.ui.consejos.ConsejosCahorroFragment"
         android:label="fragment_tab_eins"
-        tools:layout="@layout/fragment_tab_eins" />
+        tools:layout="@layout/fragment_consejocachorro" />
 
 </navigation>

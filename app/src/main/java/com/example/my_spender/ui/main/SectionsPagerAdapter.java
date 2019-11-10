@@ -9,8 +9,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.example.my_spender.R;
-import com.example.my_spender.ui.consejos.TabEins;
-import com.example.my_spender.ui.consejos.TabZwei;
+import com.example.my_spender.ui.consejos.ConsejosCahorroFragment;
+import com.example.my_spender.ui.consejos.ConsejosAdultoFragment;
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
@@ -34,10 +34,10 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         //return PlaceholderFragment.newInstance(position + 1);
         switch (position) {
             case 0:
-                TabEins tabEins = new TabEins();
-                return tabEins;
+                ConsejosCahorroFragment consejosCahorroFragment = new ConsejosCahorroFragment();
+                return consejosCahorroFragment;
             case 1:
-                TabZwei tabZwei = new TabZwei();
+                ConsejosAdultoFragment tabZwei = new ConsejosAdultoFragment();
                 return tabZwei;
             default:
                 return null;
