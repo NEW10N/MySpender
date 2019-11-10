@@ -183,6 +183,7 @@ public class HoraFragment extends Fragment {
 
                     //Aleja el boton
                     ctd.setY(-150);
+                    ctd.setVisibility(View.GONE);
 
                     //Se transfiere a otro fragment
                     FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
@@ -191,7 +192,6 @@ public class HoraFragment extends Fragment {
                 }else{
                     Toast.makeText(getContext(), "Escoja alguna hora", Toast.LENGTH_SHORT).show();
                 }
-                ctd.setVisibility(View.GONE);
                 //HoraFragment fragment = new HoraFragment();
                 //getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.ConfHora, fragment).addToBackStack(null).commit();
             }
