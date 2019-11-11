@@ -8,9 +8,9 @@
 
     <ImageView
         android:id="@+id/imagenperfil"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
-        android:layout_marginTop="2dp"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -21,12 +21,13 @@
         android:layout_width="match_parent"
         android:layout_height="145dp"
         android:orientation="vertical"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imagenperfil">
 
         <TextView
-            android:id="@+id/textNameInformation"
+            android:id="@+id/textNameInformationAdulto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -37,7 +38,7 @@
             app:fontFamily="sans-serif-light" />
 
         <TextView
-            android:id="@+id/textSizeInfomation"
+            android:id="@+id/textSizeInfomationAdulto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -48,7 +49,7 @@
             app:fontFamily="sans-serif-light" />
 
         <TextView
-            android:id="@+id/textWeightInfomation"
+            android:id="@+id/textWeightInfomationAdulto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -58,7 +59,7 @@
             app:fontFamily="sans-serif-light" />
 
         <TextView
-            android:id="@+id/textAdditionalInfomation"
+            android:id="@+id/textAdditionalInfomationAdulto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -93,7 +94,7 @@
         android:id="@+id/divider"
         android:layout_width="482dp"
         android:layout_height="1dp"
-        android:layout_marginTop="9dp"
+        android:layout_marginTop="12dp"
         android:background="@color/colorPrimaryDark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imagenperfil" />

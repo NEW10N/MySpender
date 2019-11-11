@@ -25,7 +25,7 @@ public class datosFinalesConfFragment extends Fragment {
 
     private Button btn;
     private TextView infoTamaño, infoPesoIdeal, infoAdditional, infoCantidadCroquetas, infoCantidadDias, infoCantidadPorciones,horarios;
-    private int cantidad, tamaño, peso, edad, actividadFisica, daysNumber, hora1, hora2, hora3;
+    private int cantidad, tamaño, peso, edad, actividadFisica, veces, hora1, hora2, hora3;
     private boolean am1, am2;
     private EditText name;
 
@@ -38,7 +38,7 @@ public class datosFinalesConfFragment extends Fragment {
             peso = getArguments().getInt("Peso");
             edad = getArguments().getInt("Edad", 0);
             actividadFisica = getArguments().getInt("Actividad", 0);
-            daysNumber = getArguments().getInt("Dias");
+            veces = getArguments().getInt("Dias");
             hora1 = getArguments().getInt("Hora1");
             hora2 = getArguments().getInt("Hora2", 0);
             hora3 = getArguments().getInt("Hora3", 0);
@@ -66,6 +66,7 @@ public class datosFinalesConfFragment extends Fragment {
         infoCantidadPorciones = view.findViewById(R.id.datoPorcionesFinal);
         horarios = view.findViewById(R.id.horarios);
         name = view.findViewById(R.id.editTextName);
+        Toast.makeText(getContext(), actividadFisica + "", Toast.LENGTH_SHORT);
 
 
         infoTamaño.setText("Tamaño: " + tamaño + " cm");
@@ -85,8 +86,12 @@ public class datosFinalesConfFragment extends Fragment {
             infoAdditional.setText("Actividad fisica: " + actividad);
         }
         infoCantidadCroquetas.setText(cantidad + " gramos");
-        infoCantidadDias.setText(daysNumber + " veces");
-        final int porciones = cantidad/daysNumber;
+        if (veces == 1){
+            infoCantidadDias.setText(veces + " vez");
+        }else{
+            infoCantidadDias.setText(veces + " veces");
+        }
+        final int porciones = cantidad/veces;
         infoCantidadPorciones.setText(porciones + " gramos");
 
         //HORARIOS
@@ -122,30 +127,33 @@ public class datosFinalesConfFragment extends Fragment {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(getContext(), actividadFisica + "", Toast.LENGTH_SHORT);
 
-                AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(getContext(), "administracion", null, 1);
+                AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(getContext(), "animal", null, 1);
                 SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
 
                 ContentValues registro = new ContentValues();
 
+                registro.put("llave", 1);
+
+                //1 si es cachorro, 0 si es adulto
                 if(actividadFisica == 0){
-                    registro.put("tipo", true);
+                    registro.put("tipo", 1);
                 }else {
-                    registro.put("tipo", false);
+                    registro.put("tipo", 0);
                 }
                 String nombre = name.getText().toString();
                 registro.put("nombre", nombre);
                 registro.put("tamaño", tamaño);
                 registro.put("peso", peso);
 
-                //enviar atributo
-                if(edad!=0){
+                //enviar atributo (0 significa cachorro y tiene edad, otro numero significa adulto y tiene actividad fisica)
+                if(actividadFisica == 0){
                     registro.put("atributo", edad);
                 }else{
                     registro.put("atributo", actividadFisica);
                 }
-                registro.put("atributo", edad);
-                registro.put("cantidadD", daysNumber);
+                registro.put("cantidadV", veces);
                 registro.put("cantidadP", porciones);
 
                 //Enviar horas transformado a 24horas
@@ -208,6 +216,7 @@ public class datosFinalesConfFragment extends Fragment {
                     hora3 = hora3 + 12;
                     registro.put("hora3", hora3);
                 }
+                int cantidad = BaseDeDatos.delete("mascota", "llave="+1,null);
                 BaseDeDatos.insert("mascota", null, registro);
                 BaseDeDatos.close();
 
