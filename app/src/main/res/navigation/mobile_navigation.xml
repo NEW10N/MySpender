@@ -41,7 +41,20 @@
         android:id="@+id/nav_modo_uso"
         android:name="com.example.my_spender.ui.modo.ModoFragment"
         android:label="@string/menu_modo_uso"
-        tools:layout="@layout/fragment_modo" />
+        tools:layout="@layout/fragment_modo" >
+        <action
+            android:id="@+id/action_nav_modo_uso_to_modoUsoInicioFragment"
+            app:destination="@id/modoUsoInicioFragment" />
+        <action
+            android:id="@+id/action_nav_modo_uso_to_modoUsoConsejosFragment"
+            app:destination="@id/modoUsoConsejosFragment" />
+        <action
+            android:id="@+id/action_nav_modo_uso_to_modoUsoConectividadFragment"
+            app:destination="@id/modoUsoConectividadFragment" />
+        <action
+            android:id="@+id/action_nav_modo_uso_to_modoUsoConfiguracionFragment"
+            app:destination="@id/modoUsoConfiguracionFragment" />
+    </fragment>
     <activity
         android:id="@+id/sistemaDifusoCachorro"
         android:name="com.example.my_spender.SistemaDifusoCachorro"
@@ -57,5 +70,25 @@
         android:name="com.example.my_spender.ui.configuraciones.CantidadttFragment"
         android:label="fragment_cantidadantes"
         tools:layout="@layout/fragment_cantidadantes" />
+    <fragment
+        android:id="@+id/modoUsoInicioFragment"
+        android:name="com.example.my_spender.ui.modo.ModoUsoInicioFragment"
+        android:label="Modo de uso"
+        tools:layout="@layout/fragment_modo_uso_inicio" />
+    <fragment
+        android:id="@+id/modoUsoConsejosFragment"
+        android:name="com.example.my_spender.ui.modo.ModoUsoConsejosFragment"
+        android:label="Modo de uso"
+        tools:layout="@layout/fragment_modo_uso_consejos" />
+    <fragment
+        android:id="@+id/modoUsoConfiguracionFragment"
+        android:name="com.example.my_spender.ui.modo.ModoUsoConfiguracionFragment"
+        android:label="Modo de uso"
+        tools:layout="@layout/fragment_modo_uso_configuracion" />
+    <fragment
+        android:id="@+id/modoUsoConectividadFragment"
+        android:name="com.example.my_spender.ui.modo.ModoUsoConectividadFragment"
+        android:label="Modo de uso"
+        tools:layout="@layout/fragment_modo_uso_conectividad" />
 
 </navigation>
