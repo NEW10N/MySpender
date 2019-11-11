@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -9,11 +10,96 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:text="Manual para uso de la aplicación"
         android:textAlignment="center"
-        android:textSize="20sp"
+        android:textColor="#D50000"
+        android:textSize="35dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="369dp"
+        android:layout_height="77dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="16dp"
+        android:text="En esta sección encontraras ayuda  para poder interactuar con MySpender."
+        android:textAlignment="viewStart"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_modo_uso" />
+
+    <Button
+        android:id="@+id/ModoUsoInicio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="138dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="138dp"
+        android:background="@drawable/buttonrec"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="1 - INICIO"
+        android:textColor="@color/colorWhite"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <Button
+        android:id="@+id/ModoUsoConsejos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="139dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="138dp"
+        android:background="@drawable/buttonrec"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="2 - CONSEJOS"
+        android:textColor="@color/colorWhite"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ModoUsoInicio" />
+
+    <Button
+        android:id="@+id/ModoUsoConectividad"
+        android:layout_width="180dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="118dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="119dp"
+        android:background="@drawable/buttonrec"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="3 - CONECTIVIDAD"
+        android:textColor="@color/colorWhite"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ModoUsoConsejos" />
+
+    <Button
+        android:id="@+id/ModoUsoConfiguracion"
+        android:layout_width="180dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="118dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="119dp"
+        android:background="@drawable/buttonrec"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="4 - CONFIGURACIÓN"
+        android:textColor="@color/colorWhite"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ModoUsoConectividad" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
