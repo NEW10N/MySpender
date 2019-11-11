@@ -54,7 +54,7 @@
         android:drawableLeft="@drawable/ic_mode_edit"
         android:drawablePadding="5dp"
         android:fontFamily="sans-serif-condensed-light"
-        android:text="Cambiar"
+        android:text="Eliminar"
         android:textColor="@color/colorWhite"
         android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
