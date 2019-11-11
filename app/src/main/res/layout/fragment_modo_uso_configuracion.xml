@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout4"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.modo.ModoUsoConfiguracionFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-light"
+                android:text="Configuración"
+                android:textAlignment="center"
+                android:textColor="#D50000"
+                android:textSize="35dp" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="8dp"
+                android:fontFamily="sans-serif-light"
+                android:text="En esta sección el usuario va a ingresar la información necesaria para configurar MySpender donde ingresara los siguientes datos:"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="8dp"
+                android:text="1. Ingresar la edad de tu mascota."
+                android:textSize="24sp"
+                android:textStyle="italic" />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/edad" />
+
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="8dp"
+                android:text="2. Ingresar el tamaño de tu mascota."
+                android:textSize="24sp"
+                android:textStyle="italic" />
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/tam" />
+
+            <TextView
+                android:id="@+id/textView27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="8dp"
+                android:text="3. Ingresar el peso de tu mascota."
+                android:textSize="24sp"
+                android:textStyle="italic" />
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/peso" />
+
+            <TextView
+                android:id="@+id/textView28"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="8dp"
+                android:text="Ingresando dichos elementos, MySpender te arroja los resultados correspondientes:"
+                android:textAlignment="center"
+                android:textSize="24sp" />
+
+            <ImageView
+                android:id="@+id/imageView12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/resultado" />
+
+            <TextView
+                android:id="@+id/textView30"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="8dp"
+                android:text="4. Ingresar la cantidad y las horas  de porciones al día."
+                android:textSize="24sp"
+                android:textStyle="italic" />
+
+            <ImageView
+                android:id="@+id/imageView13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/hora1" />
+
+            <TextView
+                android:id="@+id/textView31"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="8dp"
+                android:text="5. Se mostrara la informacion recabada."
+                android:textSize="24sp"
+                android:textStyle="italic" />
+
+            <ImageView
+                android:id="@+id/imageView15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/inf" />
+
+            <TextView
+                android:id="@+id/textView32"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="8dp"
+                android:text="6. Se mostraran los datos obtenidos"
+                android:textSize="24sp"
+                android:textStyle="italic" />
+
+            <ImageView
+                android:id="@+id/imageView16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/finales" />
+
+            <TextView
+                android:id="@+id/textView33"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="8dp"
+                android:text="7. Al final la información sera registrada y tendras opcion de editar dicha infromación ingresada."
+                android:textSize="24sp"
+                android:textStyle="italic" />
+
+            <ImageView
+                android:id="@+id/imageView17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/editar" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
