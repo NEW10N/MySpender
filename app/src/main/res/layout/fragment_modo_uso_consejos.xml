@@ -85,6 +85,32 @@
                 android:textSize="24sp" />
 
             <TextView
+                android:id="@+id/textView20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="     *  Alimentación"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textSize="24dp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="      * Horarios recomendados"
+                android:textSize="24dp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="     *  Tipo de alimentos."
+                android:textSize="24dp"
+                android:textStyle="italic" />
+
+            <TextView
                 android:id="@+id/textView14"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -107,6 +133,22 @@
                 android:fontFamily="sans-serif-condensed-light"
                 android:text="Los elementos informativos que se encontraran son:  "
                 android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/textView23"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="    * Alimentacion"
+                android:textSize="24dp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/textView24"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="    * Vitaminas"
+                android:textSize="24dp"
+                android:textStyle="italic" />
 
         </LinearLayout>
     </ScrollView>
