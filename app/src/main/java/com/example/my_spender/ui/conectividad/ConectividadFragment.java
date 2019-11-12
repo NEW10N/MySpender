@@ -1,12 +1,16 @@
 package com.example.my_spender.ui.conectividad;
 
+import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,9 +21,15 @@ import com.example.my_spender.R;
 import com.example.my_spender.home;
 import com.example.my_spender.progress;
 
+import java.util.Set;
+
 public class ConectividadFragment extends Fragment {
 
     private ProgressBar miProgress;
+    private BluetoothAdapter mBtAdapter;
+    private final String NOMBRE_ARDUINO = "GodiTupper";
+    private static final String TAG = "ConectividadFragment";
+    String address;
     Button btncon;
     //Estado fragment = new HoraFragment();
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -43,6 +53,9 @@ public class ConectividadFragment extends Fragment {
         btncon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                VerificarEstadoBI();
+
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
@@ -68,7 +81,15 @@ public class ConectividadFragment extends Fragment {
                         getActivity().runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                final ConectividadEstadoFragment fragment = new ConectividadEstadoFragment();
+
+                                final EnvioDatosFragment fragment = new EnvioDatosFragment();
+
+                                //Se crea un paquete donde se almacena el address
+                                Bundle cantidadCroquetas = new Bundle();
+                                cantidadCroquetas.putString("address", address);
+                                //Se envia el paquete a la siguiente fragment
+                                fragment.setArguments(cantidadCroquetas);
+
                                 FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
                                 transaction.replace(R.id.contConectividad, fragment);
                                 transaction.commit();
@@ -80,6 +101,26 @@ public class ConectividadFragment extends Fragment {
                 btncon.setVisibility(View.GONE);
                 miProgress.setVisibility(View.VISIBLE);
                 miProgress.setMax(100);
+
+                // Obtiene el adaptador locak Bluetooth adapter
+                mBtAdapter = BluetoothAdapter.getDefaultAdapter();
+                // Obtiene un conjunto de dispositivos actualmente emparejados y agrega a 'paired'
+                Set<BluetoothDevice> pairedDevices = mBtAdapter.getBondedDevices();
+                // Adiciona un dispositivo previo emparejado al array
+                if (pairedDevices.size() > 0){
+                    for(BluetoothDevice device : pairedDevices){
+                        if(device.getName().equals(NOMBRE_ARDUINO)){
+                            // Obtener la dirección MAC del dispositivo
+                            Toast.makeText(getContext(), device.getName(), Toast.LENGTH_SHORT);
+                            String info = device.getName() + "\n" + device.getAddress();
+                            address = info.substring(info.length() - 17);
+                            Log.d(TAG, "Mac = " + address);
+
+                        }
+                        //mPairedDevicesArrayAdapter.add(device.getName() + "\n" + device.getAddress());
+
+                    }
+                }
 
             }
 
@@ -93,4 +134,20 @@ public class ConectividadFragment extends Fragment {
                 }
             });
         }
+
+    private void VerificarEstadoBI(){
+        //Comprueba que el dispositivo tiene Bluetoot y que está encendido.
+        mBtAdapter = BluetoothAdapter.getDefaultAdapter();
+        if(mBtAdapter == null){
+            Toast.makeText(getContext(), "El dispositivo no soporta Bluetooth", Toast.LENGTH_SHORT).show();
+        } else {
+            if (mBtAdapter.isEnabled()){
+                Log.d(TAG, "... Bluetooth Activado...");
+            } else {
+                //Solicita al usuario que active Bluetooth
+                Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+                startActivityForResult(enableBtIntent, 1);
+            }
+        }
+    }
     }
