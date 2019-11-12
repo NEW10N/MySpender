@@ -1,34 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorOnAccent">
+    android:background="@color/colorOnAccent"
+    android:id="@+id/contConectividadD">
 
     <ImageView
         android:id="@+id/imgBluetooth"
         android:layout_width="252dp"
         android:layout_height="351dp"
         android:layout_marginTop="64dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_centerHorizontal="true"
         app:srcCompat="@drawable/bluetooth" />
 
     <TextView
-        android:id="@+id/textcanpor"
-        android:layout_width="406dp"
-        android:layout_height="87dp"
-        android:layout_marginTop="32dp"
-        android:paddingTop="15dp"
-        android:text="La conexión fue un exito o un fracaso perros :c"
-        android:textAlignment="center"
-        android:textColor="@color/colorBlack"
-        android:textSize="25dp"
-        app:fontFamily="sans-serif"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgBluetooth" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:id="@+id/TituloDisp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imgBluetooth"
+        android:text="Dispositivos vinculados"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"/>
+
+    <!--
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/TituloDisp">
+        <ListView
+            android:id="@+id/ListViewDispositivos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </ScrollView>
+    -->
+
+    <ListView
+        android:id="@+id/ListViewDispositivos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/TituloDisp"/>
+
+</RelativeLayout>
