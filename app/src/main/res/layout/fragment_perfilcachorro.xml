@@ -149,7 +149,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:paddingLeft="20dp"
-                android:text="El contedor se encuentra lleno o no."
+                android:text="El contedor se encuentra lleno."
                 android:textColor="@color/colorBlack"
                 android:textSize="20dp"
                 app:fontFamily="sans-serif" />
@@ -200,7 +200,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:paddingLeft="20dp"
-                android:text="El contedor se encuentra lleno o no."
+                android:text="El contedor se encuentra lleno."
                 android:textColor="@color/colorBlack"
                 android:textSize="20dp"
                 app:fontFamily="sans-serif" />

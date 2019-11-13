@@ -28,7 +28,7 @@ import java.util.UUID;
 
 public class EnvioDatosFragment extends Fragment {
 
-    Button idEncender_Aux, idApagar;
+    Button idEncender_Aux, idApagar, btndispensar;
     TextView estado;
 
     Handler bluetoothIn;
@@ -50,6 +50,7 @@ public class EnvioDatosFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_envio_datos, container, false);
         idEncender_Aux = root.findViewById(R.id.btnEnviarD);
         idApagar = root.findViewById(R.id.btnRecibirD);
+        btndispensar = root.findViewById(R.id.btnDispensarAhora);
         estado = root.findViewById(R.id.estadoD);
 
         if(getArguments() != null){
@@ -66,7 +67,10 @@ public class EnvioDatosFragment extends Fragment {
 
                     if(endOfLineIndex > 0) {
                         String dataInPrint = DataStringIN.substring(0, endOfLineIndex);
-                        estado.setText("Dispositivo: " + dataInPrint);
+                        String [] datos = dataInPrint.split(",");
+
+                        estado.setText("Dispositivo: " + datos[0]);
+                        Toast.makeText(getContext(), "Nivel de agua: " + datos[1],Toast.LENGTH_SHORT).show();
                         DataStringIN.delete(0, DataStringIN.length());
                     }
                 }
@@ -84,6 +88,13 @@ public class EnvioDatosFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 MyConexionBT.write("1");
+            }
+        });
+
+        btndispensar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MyConexionBT.write("2");
             }
         });
 
