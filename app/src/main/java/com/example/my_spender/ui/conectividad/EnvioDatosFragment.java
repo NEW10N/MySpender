@@ -4,7 +4,9 @@ package com.example.my_spender.ui.conectividad;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -19,6 +21,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.my_spender.AdminSQLiteDatos;
 import com.example.my_spender.R;
 
 import java.io.IOException;
@@ -69,8 +72,21 @@ public class EnvioDatosFragment extends Fragment {
                         String dataInPrint = DataStringIN.substring(0, endOfLineIndex);
                         String [] datos = dataInPrint.split(",");
 
-                        estado.setText("Dispositivo: " + datos[0 ]);
-                        Toast.makeText(getContext(), "Nivel de agua: " + datos[1],Toast.LENGTH_SHORT).show();
+                        estado.setText("Dispositivo: " + datos[0]);
+                        if(!datos[1].equals("cosas")){
+                            Toast.makeText(getContext(), "Nivel de agua: " + datos[1],Toast.LENGTH_SHORT).show();
+                            AdminSQLiteDatos admin = new AdminSQLiteDatos(getContext(), "info", null, 1);
+                            SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
+                            ContentValues registro = new ContentValues();
+
+                            registro.put("llave", 1);
+                            registro.put("valorAgua", datos[1]);
+                            registro.put("valorCroquetas", "El contenedor se encuentra vacio");
+
+                            int cantidad = BaseDeDatos.delete("datos", "llave="+1,null);
+                            BaseDeDatos.insert("datos", null, registro);
+                            BaseDeDatos.close();
+                        }
                         DataStringIN.delete(0, DataStringIN.length());
                     }
                 }
