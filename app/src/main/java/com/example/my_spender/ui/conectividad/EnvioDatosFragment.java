@@ -69,7 +69,7 @@ public class EnvioDatosFragment extends Fragment {
                         String dataInPrint = DataStringIN.substring(0, endOfLineIndex);
                         String [] datos = dataInPrint.split(",");
 
-                        estado.setText("Dispositivo: " + datos[0]);
+                        estado.setText("Dispositivo: " + datos[0 ]);
                         Toast.makeText(getContext(), "Nivel de agua: " + datos[1],Toast.LENGTH_SHORT).show();
                         DataStringIN.delete(0, DataStringIN.length());
                     }
