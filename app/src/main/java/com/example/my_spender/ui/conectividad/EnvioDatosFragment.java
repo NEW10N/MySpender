@@ -81,7 +81,7 @@ public class EnvioDatosFragment extends Fragment {
 
                             registro.put("llave", 1);
                             registro.put("valorAgua", datos[1]);
-                            registro.put("valorCroquetas", "El contenedor se encuentra vacio");
+                            registro.put("valorCroquetas", datos[2]);
 
                             int cantidad = BaseDeDatos.delete("datos", "llave="+1,null);
                             BaseDeDatos.insert("datos", null, registro);
